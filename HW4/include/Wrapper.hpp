@@ -1,51 +1,72 @@
 #pragma once
 #include <memory>
 
-// Wrapped by Jinkela 2023.11.22
+// Wrapped by Jinkela and Eric 2023.11.28
 
-class Module;
-class Net;
 class Pin;
+class Net;
+class Module;
 class Placement;
-class Rectangle;
-class Row;
 
 namespace wrapper
 {
+    class Pin
+    {
+    public:
+        Pin(::Pin &_origin);
+        ~Pin();
+
+        double x();
+        double y();
+        unsigned moduleId();
+        unsigned netId();
+
+        ::Pin &getOrigin();
+        const ::Pin &getOrigin() const;
+
+    private:
+        ::Pin &_origin;
+    };
+
+    class Net
+    {
+    public:
+        Net(::Net &_origin);
+        ~Net();
+
+        unsigned numPins();
+        Pin pin(unsigned index); // index: 0 ~ numPins()-1
+
+        ::Net &getOrigin();
+        const ::Net &getOrigin() const;
+
+    private:
+        ::Net &_origin;
+    };
+
     class Module
     {
     public:
         Module(::Module &_origin);
+        ~Module();
 
-        /////////////////////////////////////////////
-        // get
-        /////////////////////////////////////////////
         const char *name();
         double x();
         double y();
         double width();
         double height();
         bool isFixed();
+        const char *orientString();
 
         double centerX();
         double centerY();
         double area();
 
-        Rectangle rectangle();
+        unsigned numPins();
+        Pin pin(unsigned index); // index: 0 ~ numPins()-1
 
-        const char *orientString();
-
-        /////////////////////////////////////////////
-        // set
-        /////////////////////////////////////////////
         void setPosition(double x, double y);
         void setCenterPosition(double x, double y);
-
-        /////////////////////////////////////////////
-        // get (for pins of this modules)
-        /////////////////////////////////////////////
-        unsigned numPins();
-        Pin &pin(unsigned index);
 
         ::Module &getOrigin();
         const ::Module &getOrigin() const;
@@ -59,44 +80,25 @@ namespace wrapper
     public:
         Placement();
         ~Placement();
-        /////////////////////////////////////////////
-        // input/output
-        /////////////////////////////////////////////
-        void readBookshelfFormat(const char *const filePathName, const char *const plFileName);
-        void outputBookshelfFormat(const char *const filePathName); // output file function
 
-        /////////////////////////////////////////////
-        // get
-        /////////////////////////////////////////////
         const char *name();
-        const char *plname();
-        double computeHpwl();
-        double computeTotalNetLength(int cellid);
-        Rectangle rectangleChip();
         double boundryTop();
         double boundryLeft();
         double boundryBottom();
         double boundryRight();
 
-        /////////////////////////////////////////////
-        // operation
-        /////////////////////////////////////////////
-        void moveDesignCenter(double xOffset, double yOffset);
-
-        /////////////////////////////////////////////
-        // get design objects/properties
-        /////////////////////////////////////////////
-        Module module(unsigned moduleId);
-        Net &net(unsigned netId);
-        Pin &pin(unsigned pinId);
-        Row &row(unsigned rowId);
-
-        double getRowHeight();
-
         unsigned numModules();
         unsigned numNets();
         unsigned numPins();
-        unsigned numRows();
+
+        Module module(unsigned moduleId);
+        Net net(unsigned netId);
+        Pin pin(unsigned pinId);
+
+        double computeHpwl();
+
+        void readBookshelfFormat(const char *const filePathName, const char *const plFileName);
+        void outputBookshelfFormat(const char *const filePathName);
 
         ::Placement &getOrigin();
         const ::Placement &getOrigin() const;
