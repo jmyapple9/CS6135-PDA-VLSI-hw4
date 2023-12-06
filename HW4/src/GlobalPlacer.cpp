@@ -7,6 +7,11 @@
 GlobalPlacer::GlobalPlacer(wrapper::Placement &placement)
     : _placement(placement)
 {
+    util = PlaceData(
+        placement,
+        30,
+        100.0);
+    // PlaceData util(30, 100.0);
 }
 
 void GlobalPlacer::randomPlace()
@@ -34,12 +39,14 @@ void GlobalPlacer::place()
     // if you use other methods, you can skip and delete it directly.
     //////////////////////////////////////////////////////////////////
 
-    ExampleFunction ef; // require to define the object function and gradient function
+    ExampleFunction ef(_placement); // require to define the object function and gradient function
 
     vector<double> x(2); // solution vector, size: num_blocks*2
-                         // each 2 variables represent the X and Y dimensions of a block
-    x[0] = 100;          // initialize the solution vector
-    x[1] = 100;
+    // vector<double> x(ef.dimension()); // solution vector, size: num_blocks*2
+                                      // each 2 variables represent the X and Y dimensions of a block
+    // x[0] = 100;          // initialize the solution vector
+    // x[1] = 100;
+    initialPlacement(x);
 
     NumericalOptimizer no(ef);
     no.setX(x);             // set initial solution
@@ -68,4 +75,32 @@ void GlobalPlacer::place()
      * 6. Replace the form of g[] in evaluateG() by the form like "g = grad(WL()) + grad(BinDensity())"
      * 7. Set the initial vector x in place(), set step size, set #iteration, and call the solver like above example
      * */
+}
+void GlobalPlacer::initialPlacement(vector<double> x)
+{
+    double binArea = 0.0;
+    int binCnt = 0;
+    bool put[_placement.numModules()];
+
+    // calculate maxBinArea;
+
+
+    // put modules in same net in same bin if possible
+    for (unsigned nID = 0; nID < _placement.numNets(); ++nID)
+    {
+        for (unsigned mID = 0; mID < _placement.net(nID).numPins(); ++mID)
+        {
+            double modArea = _placement.module(mID).area();
+            if(modArea + binArea > util.maxBinArea){
+                ++binCnt;
+                binArea = 0;
+            }
+            binArea += modArea;
+
+            // put it! Exclude for fixed or put modules
+
+            
+        }
+
+    }
 }

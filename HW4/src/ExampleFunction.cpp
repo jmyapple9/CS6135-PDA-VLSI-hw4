@@ -2,7 +2,8 @@
 
 // minimize 3*x^2 + 2*x*y + 2*y^2 + 7
 
-ExampleFunction::ExampleFunction()
+ExampleFunction::ExampleFunction(wrapper::Placement &placement)
+    : _placement(placement)
 {
 }
 
@@ -20,6 +21,6 @@ void ExampleFunction::evaluateF(const vector<double> &x, double &f)
 
 unsigned ExampleFunction::dimension()
 {
-    return 2; // num_blocks*2
+    return 2 * _placement.numModules(); // num_blocks*2
     // each two dimension represent the X and Y dimensions of each block
 }
