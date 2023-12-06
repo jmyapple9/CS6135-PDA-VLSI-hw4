@@ -13,8 +13,10 @@ public:
     void evaluateFG(const vector<double> &x, double &f, vector<double> &g);
     void evaluateF(const vector<double> &x, double &f);
     unsigned dimension();
+    void increaseLambda();
 private:
     wrapper::Placement &_placement;
+    unsigned lambda = 0;
 };
 
 #endif // EXAMPLEFUNCTION_H

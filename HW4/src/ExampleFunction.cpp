@@ -24,3 +24,8 @@ unsigned ExampleFunction::dimension()
     return 2 * _placement.numModules(); // num_blocks*2
     // each two dimension represent the X and Y dimensions of each block
 }
+
+void ExampleFunction::increaseLambda()
+{
+    lambda += 100;
+}

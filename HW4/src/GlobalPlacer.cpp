@@ -41,24 +41,47 @@ void GlobalPlacer::place()
 
     ExampleFunction ef(_placement); // require to define the object function and gradient function
 
-    vector<double> x(2); // solution vector, size: num_blocks*2
+    vector<double> sol(ef.dimension()); // solution vector, size: num_blocks*2
     // vector<double> x(ef.dimension()); // solution vector, size: num_blocks*2
-                                      // each 2 variables represent the X and Y dimensions of a block
+    // each 2 variables represent the X and Y dimensions of a block
     // x[0] = 100;          // initialize the solution vector
     // x[1] = 100;
-    initialPlacement(x);
+    initialPlacement(sol);
 
     NumericalOptimizer no(ef);
-    no.setX(x);             // set initial solution
-    no.setNumIteration(35); // user-specified parameter
-    no.setStepSizeBound(5); // user-specified parameter
-    no.solve();             // Conjugate Gradient solver
+    no.setX(sol);              // set initial solution
+    no.setNumIteration(100);   // user-specified parameter
+    no.setStepSizeBound(1500); // user-specified parameter
 
-    cout << "Current solution:\n";
-    for (unsigned i = 0; i < no.dimension(); i++)
+    double
+        bTop{_placement.boundryTop()},
+        bBottom{_placement.boundryBottom()},
+        bLeft{_placement.boundryLeft()},
+        bRight{_placement.boundryRight()};
+
+    unsigned numModules = _placement.numModules();
+    unsigned EPOCH = 1;
+    for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
-        cout << "x[" << i << "] = " << no.x(i) << "\n";
+        no.solve(); // Conjugate Gradient solver
+        for (unsigned nID = 0; nID < numModules; ++nID)
+        {
+            wrapper::Module mod = _placement.module(nID);
+            double modW = mod.width();
+            double modH = mod.height();
+
+            double x_clip = max(bRight - modH, min(bLeft, no.x(2 * nID)));
+            double y_clip = max(bTop - modH, min(bBottom, no.x(2 * nID + 1)));
+
+            sol[2 * nID] = (mod.isFixed() ? mod.x() : x_clip);
+            sol[2 * nID + 1] = (mod.isFixed() ? mod.y() : y_clip);
+
+            mod.setPosition(sol[2 * nID], sol[2 * nID + 1]);
+        }
+        no.setX(sol);
+        ef.increaseLambda();
     }
+
     cout << "Objective: " << no.objective() << "\n";
     ////////////////////////////////////////////////////////////////
 
@@ -78,29 +101,34 @@ void GlobalPlacer::place()
 }
 void GlobalPlacer::initialPlacement(vector<double> x)
 {
-    double binArea = 0.0;
-    int binCnt = 0;
-    bool put[_placement.numModules()];
+    double
+        bTop{_placement.boundryTop()},
+        bBottom{_placement.boundryBottom()},
+        bLeft{_placement.boundryLeft()},
+        bRight{_placement.boundryRight()};
 
-    // calculate maxBinArea;
-
-
-    // put modules in same net in same bin if possible
-    for (unsigned nID = 0; nID < _placement.numNets(); ++nID)
+    double
+        xcen{(bLeft + bRight) / 2.0},
+        ycen{(bTop + bBottom) / 2.0};
+    // cout << "bTop" << bTop << ", bBottom" << bBottom << ", bLeft" << bLeft << ", bRight" << bRight << endl;
+    // cout << "xcen" << xcen << ", ycen" << ycen << endl;
+    for (unsigned nID = 0; nID < _placement.numModules(); ++nID)
     {
-        for (unsigned mID = 0; mID < _placement.net(nID).numPins(); ++mID)
+        wrapper::Module mod = _placement.module(nID);
+        if (!mod.isFixed())
         {
-            double modArea = _placement.module(mID).area();
-            if(modArea + binArea > util.maxBinArea){
-                ++binCnt;
-                binArea = 0;
-            }
-            binArea += modArea;
-
-            // put it! Exclude for fixed or put modules
-
-            
+            mod.setCenterPosition(xcen, ycen);
         }
-
+        /* else
+        {
+            // check if the fix mod outside the boundary
+            if(!(bLeft <= mod.x() and mod.x() <= bRight and
+               bBottom <=mod.y() and mod.y() <= bTop))
+               {
+                    cout << "Fix module out of boundary!!!\n";
+               }
+        } */
+        x[2 * nID] = mod.x();
+        x[2 * nID + 1] = mod.y();
     }
 }
