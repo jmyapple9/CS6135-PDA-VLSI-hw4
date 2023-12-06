@@ -7,7 +7,7 @@
 #include <string.h>
 #include <cmath>
 #include <iostream>
-
+#include <vector>
 #define BINCUT 10
 class ExampleFunction : public NumericalOptimizerInterface
 {
@@ -23,10 +23,12 @@ public:
     int binCut{BINCUT}, binTotalNum{BINCUT * BINCUT};
     double eta{500}, boundW{0.0}, boundH{0.0}, binW{0.0}, binH{0.0}, binArea{0.0}, avgDensity{0.0};
     // double *grad{nullptr}, *xExp{nullptr}, *binDensity{nullptr};
-    double grad[2 * BINCUT * BINCUT];
-    double xExp[4 * BINCUT * BINCUT];
-    double binDensity[BINCUT * BINCUT];
-private:
+    // vector<double> grad, xExp, binDensity;
+
+    // double grad[2 * BINCUT * BINCUT];
+    // double xExp[4 * BINCUT * BINCUT];
+    // double binDensity[BINCUT * BINCUT];
+    // private:
     wrapper::Placement &_placement;
     unsigned lambda = 0;
 };

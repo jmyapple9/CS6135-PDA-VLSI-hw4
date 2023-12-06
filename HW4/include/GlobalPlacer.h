@@ -9,9 +9,9 @@ class GlobalPlacer
 public:
     GlobalPlacer(wrapper::Placement &placement);
 
-    void randomPlace(); // An example of random placement implemented by TA
+    void randomPlace(std::vector<double>& x); // An example of random placement implemented by TA
     void place();
-    void initialPlacement(std::vector<double> x);
+    void initialPlacement(std::vector<double>& x);
 
 private:
     wrapper::Placement &_placement;
