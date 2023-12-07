@@ -30,7 +30,7 @@ public:
     // double binDensity[BINCUT * BINCUT];
     // private:
     wrapper::Placement &_placement;
-    unsigned lambda = 0;
+    unsigned lambda = 1000;
 };
 
 #endif // EXAMPLEFUNCTION_H

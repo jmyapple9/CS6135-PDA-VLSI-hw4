@@ -76,8 +76,8 @@ void GlobalPlacer::place()
             double modW = mod.width();
             double modH = mod.height();
 
-            double x_clip = max(bRight - modW, min(bLeft, no.x(2 * nID)));
-            double y_clip = max(bTop - modH, min(bBottom, no.x(2 * nID + 1)));
+            double x_clip = min(bRight - modW, max(bLeft, no.x(2 * nID)));
+            double y_clip = min(bTop - modH, max(bBottom, no.x(2 * nID + 1)));
 
             sol[2 * nID] = (mod.isFixed() ? mod.x() : x_clip);
             sol[2 * nID + 1] = (mod.isFixed() ? mod.y() : y_clip);
