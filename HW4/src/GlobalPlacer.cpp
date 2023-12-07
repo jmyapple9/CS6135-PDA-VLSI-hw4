@@ -7,10 +7,10 @@
 GlobalPlacer::GlobalPlacer(wrapper::Placement &placement)
     : _placement(placement)
 {
-    util = PlaceData(
-        placement,
-        30,
-        100.0);
+    // util = PlaceData(
+    //     placement,
+    //     30,
+    //     100.0);
     // PlaceData util(30, 100.0);
 }
 
@@ -36,6 +36,30 @@ void GlobalPlacer::randomPlace(vector<double>& sol)
     }
 }
 
+void GlobalPlacer::initialPlacement(vector<double>& sol)
+{
+    double
+        bTop{_placement.boundryTop()},
+        bBottom{_placement.boundryBottom()},
+        bLeft{_placement.boundryLeft()},
+        bRight{_placement.boundryRight()};
+
+    double
+        xcen{(bLeft + bRight) / 2.0},
+        ycen{(bTop + bBottom) / 2.0};
+
+    for (unsigned nID = 0; nID < _placement.numModules(); ++nID)
+    {
+        wrapper::Module mod = _placement.module(nID);
+        if (!mod.isFixed())
+        {
+            mod.setCenterPosition(xcen, ycen);
+        }
+        sol[2 * nID] = mod.x();
+        sol[2 * nID + 1] = mod.y();
+    }
+}
+
 void GlobalPlacer::place()
 {
     ///////////////////////////////////////////////////////////////////
@@ -51,9 +75,9 @@ void GlobalPlacer::place()
     // x[0] = 100;          // initialize the solution vector
     // x[1] = 100;
     // initialPlacement(sol);
+    randomPlace(sol);
 
     NumericalOptimizer no(ef);
-    randomPlace(sol);
     no.setX(sol);              // set initial solution
     no.setNumIteration(100);   // user-specified parameter
     no.setStepSizeBound(1500); // user-specified parameter
@@ -68,6 +92,7 @@ void GlobalPlacer::place()
     unsigned EPOCH = 1;
     for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
+        cout << "solving..." << endl;
         no.solve(); // Conjugate Gradient solver
         cout << "solved!" << endl;
         for (unsigned nID = 0; nID < numModules; ++nID)
@@ -104,37 +129,4 @@ void GlobalPlacer::place()
      * 6. Replace the form of g[] in evaluateG() by the form like "g = grad(WL()) + grad(BinDensity())"
      * 7. Set the initial vector x in place(), set step size, set #iteration, and call the solver like above example
      * */
-}
-void GlobalPlacer::initialPlacement(vector<double>& sol)
-{
-    double
-        bTop{_placement.boundryTop()},
-        bBottom{_placement.boundryBottom()},
-        bLeft{_placement.boundryLeft()},
-        bRight{_placement.boundryRight()};
-
-    double
-        xcen{(bLeft + bRight) / 2.0},
-        ycen{(bTop + bBottom) / 2.0};
-    // cout << "bTop" << bTop << ", bBottom" << bBottom << ", bLeft" << bLeft << ", bRight" << bRight << endl;
-    // cout << "xcen" << xcen << ", ycen" << ycen << endl;
-    for (unsigned nID = 0; nID < _placement.numModules(); ++nID)
-    {
-        wrapper::Module mod = _placement.module(nID);
-        if (!mod.isFixed())
-        {
-            mod.setCenterPosition(xcen, ycen);
-        }
-        /* else
-        {
-            // check if the fix mod outside the boundary
-            if(!(bLeft <= mod.x() and mod.x() <= bRight and
-               bBottom <=mod.y() and mod.y() <= bTop))
-               {
-                    cout << "Fix module out of boundary!!!\n";
-               }
-        } */
-        sol[2 * nID] = mod.x();
-        sol[2 * nID + 1] = mod.y();
-    }
 }

@@ -1,6 +1,9 @@
 #include "ExampleFunction.h"
 
 // minimize 3*x^2 + 2*x*y + 2*y^2 + 7
+// double binDensity[BINCUT];
+// double grad[BINCUT * 2];
+// double xExp[BINCUT * 4];
 
 ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     : _placement(placement)
@@ -12,19 +15,19 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
 
     // lambda = 0;
     // eta = 500;
-    // binCut = 10;
+    binCut = 10;
 
-    // binTotalNum = binCut * binCut;
+    binTotalNum = binCut * binCut;
     binW = boundW / binCut;
     binH = boundH / binCut;
     binArea = binW * binH;
 
     // binDensity.resize(binTotalNum);
-    // binDensity.assign(0.0, binTotalNum);
-    // grad.resize(2 * binTotalNum);
-    // grad.assign(0.0, 2 * binTotalNum);
-    // xExp.resize(4 * binTotalNum);
-    // xExp.assign(0.0, 4 * binTotalNum);
+    // binDensity.assign(binTotalNum, 0.0);
+    // grad.resize(2 * numModules);
+    // grad.assign(2 * numModules, 0.0);
+    // xExp.resize(4 * numModules);
+    // xExp.assign(4 * numModules, 0.0);
 
     // binDensity = new double[binTotalNum]();
     // grad = new double[numModules * 2]();
@@ -51,23 +54,29 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
     // f = 3 * x[0] * x[0] + 2 * x[0] * x[1] + 2 * x[1] * x[1] + 7; // objective function
     // g[0] = 6 * x[0] + 2 * x[1];                                  // gradient function of X
     // g[1] = 2 * x[0] + 4 * x[1];                                  // gradient function of Y
-    cout << "Enter: evaluateFG\n";
+    // cout << "Enter: evaluateFG\n";
 
     fill(g.begin(), g.end(), 0.0);
     f = 0.0;
-
+    // for(int i = 0; i < 2 * numModules; i++) grad[i]=0;
+    // for(int i = 0; i < binTotalNum; i++) binDensity[i]=0;
     // fill(grad.begin(), grad.end(), 0.0);
     // fill(binDensity.begin(), binDensity.end(), 0.0);
-    vector<double> grad(binTotalNum * 2, 0.0);
-    vector<double> binDensity(binTotalNum, 0.0);
-
     // memset(binDensity, 0.0, sizeof(double)*binTotalNum);
-    // memset(grad, 0.0, sizeof(double)*binTotalNum*2);
+    // memset(grad, 0.0, sizeof(double)*numModules*2);
+
+    vector<double> binDensity(binTotalNum, 0.0);
+    vector<double> grad(numModules * 2, 0.0);
+    // cout << "binDensity.size(): " <<binDensity.size() << endl;
+    // cout << "grad.size(): " <<grad.size() << endl;
+    // cout << "xExp.size(): " <<xExp.size() << endl;
+    // cout << "During evaluateFG... "<< endl;
+    fill(grad.begin(), grad.end(), 0.0);
+    fill(binDensity.begin(), binDensity.end(), 0.0);
+    // fill_n(grad, numModules * 2, 0.0);
     // fill_n(binDensity, binTotalNum, 0.0);
-    // fill_n(grad, binTotalNum * 2, 0.0);
 
     // wrapper::Module Mod = _placement.module(1);
-    cout << "During evaluateFG...\n";
     double mW{0.0}, mH{0.0}, c{0.0};
     double thetaX{0.0}, thetaY{0.0}, dX{0.0}, dY{0.0}, ABSdX{0.0}, ABSdY{0.0}, aX{0.0}, bX{0.0}, aY{0.0}, bY{0.0};
     for (int a = 0; a < binCut; ++a)
@@ -101,10 +110,8 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
                     if (!_placement.module(i).isFixed())
                     {
                         double signX{(dX >= 0) ? 1.0 : -1.0}, signY{(dY >= 0) ? 1.0 : -1.0};
-                        grad[2 * i] += (ABSdX <= mW * 0.5 + binW) ? (-2 * signX * c * aX * ABSdX * thetaY) : (ABSdX <= mW * 0.5 + binW * 2) ? (2 * c * bX * signX * (ABSdX - 2 * binW - 2 * mW) * thetaY)
-                                                                                                                                            : 0;
-                        grad[2 * i + 1] += (ABSdY <= mH * 0.5 + binH) ? (-2 * c * signY * aY * ABSdY * thetaX) : (ABSdY <= mH * 0.5 + binH * 2) ? (2 * c * bY * signY * (ABSdY - 2 * binH - 2 * mH) * thetaX)
-                                                                                                                                                : 0;
+                        grad[2 * i] += (ABSdX <= mW * 0.5 + binW) ? (-2 * signX * c * aX * ABSdX * thetaY) : (ABSdX <= mW * 0.5 + binW * 2) ? (2 * c * bX * signX * (ABSdX - 2 * binW - 2 * mW) * thetaY) : 0;
+                        grad[2 * i + 1] += (ABSdY <= mH * 0.5 + binH) ? (-2 * c * signY * aY * ABSdY * thetaX) : (ABSdY <= mH * 0.5 + binH * 2) ? (2 * c * bY * signY * (ABSdY - 2 * binH - 2 * mH) * thetaX) : 0;
                     }
                 }
             }
@@ -124,16 +131,19 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
     //     cout << "updated x: " << x[2*i] - g[2*i];
     //     cout << ", updated y: " << x[2*i+1] - g[2*i+1] << endl;
     // }
-    cout << "Done: evaluateFG\n";
+    // cout << "Done: evaluateFG\n";
 }
 
 void ExampleFunction::evaluateF(const vector<double> &x, double &f)
 {
     // f = 3 * x[0] * x[0] + 2 * x[0] * x[1] + 2 * x[1] * x[1] + 7; // objective function
 
-    cout << "Enter: evaluateF()\n";
+    // cout << "Enter: evaluateF()\n";
     f = 0.0;
     // memset(binDensity, 0.0, sizeof(double)*binTotalNum);
+    // fill(binDensity.begin(), binDensity.end(), 0.0);
+    // for(int i = 0; i < BINCUT; i++) binDensity[i]=0;
+    // fill_n(binDensity, binTotalNum, 0.0);
     // fill(binDensity.begin(), binDensity.end(), 0.0);
     vector<double> binDensity(binTotalNum, 0.0);
 
@@ -171,7 +181,7 @@ void ExampleFunction::evaluateF(const vector<double> &x, double &f)
             f += lambda * pow(binDensity[a + binCut * b] - avgDensity, 2);
         }
     }
-    cout << "Done: evaluateF()\n";
+    // cout << "Done: evaluateF()\n";
 }
 
 unsigned ExampleFunction::dimension()

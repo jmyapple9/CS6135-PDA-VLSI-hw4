@@ -20,15 +20,11 @@ public:
     void increaseLambda();
 
     unsigned numModules{0};
-    int binCut{BINCUT}, binTotalNum{BINCUT * BINCUT};
+    int binCut{0}, binTotalNum{0};
     double eta{500}, boundW{0.0}, boundH{0.0}, binW{0.0}, binH{0.0}, binArea{0.0}, avgDensity{0.0};
     // double *grad{nullptr}, *xExp{nullptr}, *binDensity{nullptr};
-    // vector<double> grad, xExp, binDensity;
 
-    // double grad[2 * BINCUT * BINCUT];
-    // double xExp[4 * BINCUT * BINCUT];
-    // double binDensity[BINCUT * BINCUT];
-    // private:
+private:
     wrapper::Placement &_placement;
     unsigned lambda = 1000;
 };
