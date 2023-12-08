@@ -16,7 +16,7 @@ public:
     void evaluateF(const vector<double> &x, double &f);
     unsigned dimension();
     void increaseLambda(unsigned offset);
-    double bellShapeFunc(size_t i, size_t binIdx, double *grad, bool calcGrad);
+    double bellShapeFunc(size_t i, size_t binIdx, double oldX, double oldY);
     double thetaByConstrs(double ABSdX, double mW, double binW, double aX, double bX);
     double thetaGradByConstrs(double ABSdX, double mW, double binW, double aX, double bX, double signX, double thetaY, double c);
 

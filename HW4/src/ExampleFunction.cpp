@@ -99,74 +99,17 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
                 dY = x[2 * i + 1] - ((b + 0.5) * binH + _placement.boundryBottom());
                 ABSdY = abs(dY);
 
-                // bell-shaped function of bin density smoothing
-                if (ABSdX <= (binW / 2 + mod.width() / 2))
-                {
-                    overlapX = 1 - alphaX * ABSdX * ABSdX;
-                }
-                else if (ABSdX <= (binW + mod.width() / 2))
-                {
-                    overlapX = betaX * (ABSdX - (binW + mod.width() / 2)) * (ABSdX - (binW + mod.width() / 2));
-                }
-                else
-                {
-                    overlapX = 0;
-                }
-                // bell-shaped function of bin density smoothing
-                if (ABSdY <= (binH / 2 + mod.height() / 2))
-                {
-                    overlapY = 1 - alphaY * ABSdY * ABSdY;
-                }
-                else if (ABSdY <= (binH + mod.height() / 2))
-                {
-                    overlapY = betaY * (ABSdY - (binH + mod.height() / 2)) * (ABSdY - (binH + mod.height() / 2));
-                }
-                else
-                {
-                    overlapY = 0;
-                }
+                overlapX = thetaByConstrs(ABSdX, mod.width(), binW, alphaX, betaX);
+                overlapY = thetaByConstrs(ABSdY, mod.height(), binH, alphaY, betaY);
 
-                if (ABSdX <= (binW / 2 + mod.width() / 2))
-                {
-                    grad[2 * i] = densityRatio * ((-2) * alphaX * dX) * overlapY;
-                }
-                else if (ABSdX <= (binW + mod.width() / 2))
-                {
-                    if (dX > 0)
-                    {
-                        grad[2 * i] = densityRatio * 2 * betaX * (dX - (binW + mod.width() / 2)) * overlapY;
-                    }
-                    else
-                    {
-                        grad[2 * i] = densityRatio * 2 * betaX * (dX + (binW + mod.width() / 2)) * overlapY;
-                    }
-                }
-                else
-                {
-                    grad[2 * i] = 0;
-                }
-
-                if (ABSdY <= (binH / 2 + mod.height() / 2))
-                {
-                    grad[2 * i + 1] = densityRatio * ((-2) * alphaY * dY) * overlapX;
-                }
-                else if (ABSdY <= (binH + mod.height() / 2))
-                {
-                    if (dY > 0)
-                    {
-                        grad[2 * i + 1] = densityRatio * 2 * betaY * (dY - (binH + mod.height() / 2)) * overlapX;
-                    }
-                    else
-                    {
-                        grad[2 * i + 1] = densityRatio * 2 * betaY * (dY + (binH + mod.height() / 2)) * overlapX;
-                    }
-                }
-                else
-                {
-                    grad[2 * i + 1] = 0;
-                }
-                // calculate overlap length
                 binDensity[binIdx] += densityRatio * overlapX * overlapY;
+
+                grad[2 * i] = thetaGradByConstrs(ABSdX, mod.width(), binW, alphaX, betaX, dX, overlapY, densityRatio);
+                grad[2 * i + 1] = thetaGradByConstrs(ABSdY, mod.height(), binH, alphaY, betaY, dY, overlapX, densityRatio);
+            
+                // calculate overlap length
+                // binDensity[binIdx] += bellShapeFunc(i, binIdx, grad, true);
+
             }
         }
         // calculate (lambda * Σ((Db(x, y)-Tb)^2)) part in objective function
@@ -239,34 +182,13 @@ void ExampleFunction::evaluateF(const vector<double> &x, double &f)
                 dY = x[2 * i + 1] - ((b + 0.5) * binH + _placement.boundryBottom());
                 ABSdY = abs(dY);
 
-                // bell-shaped function of bin density smoothing
-                if (ABSdX <= (binW / 2 + mod.width() / 2))
-                {
-                    overlapX = 1 - alphaX * ABSdX * ABSdX;
-                }
-                else if (ABSdX <= (binW + mod.width() / 2))
-                {
-                    overlapX = betaX * (ABSdX - (binW + mod.width() / 2)) * (ABSdX - (binW + mod.width() / 2));
-                }
-                else
-                {
-                    overlapX = 0;
-                }
-                // bell-shaped function of bin density smoothing
-                if (ABSdY <= (binH / 2 + mod.height() / 2))
-                {
-                    overlapY = 1 - alphaY * ABSdY * ABSdY;
-                }
-                else if (ABSdY <= (binH + mod.height() / 2))
-                {
-                    overlapY = betaY * (ABSdY - (binH + mod.height() / 2)) * (ABSdY - (binH + mod.height() / 2));
-                }
-                else
-                {
-                    overlapY = 0;
-                }
+                overlapX = thetaByConstrs(ABSdX, mod.width(), binW, alphaX, betaX);
+                overlapY = thetaByConstrs(ABSdY, mod.height(), binH, alphaY, betaY);
                 // calculate overlap length
-                binDensity[binIdx] += densityRatio * overlapX * overlapY;
+                // binDensity[binIdx] += densityRatio * overlapX * overlapY;
+
+                binDensity[binIdx] += bellShapeFunc(i, binIdx, x[2 * i], x[2 * i + 1]);
+
             }
         }
         // calculate (lambda * Σ((Db(x, y)-Tb)^2)) part in objective function
@@ -283,4 +205,98 @@ unsigned ExampleFunction::dimension()
 void ExampleFunction::increaseLambda(unsigned offset)
 {
     lambda += offset;
+}
+double ExampleFunction::bellShapeFunc(size_t i, size_t binIdx, double oldX, double oldY)
+{
+    
+    auto mod = _placement.module(i);
+    double a, b, c, mW, mH, thetaX, thetaY, dX, dY, ABSdX, ABSdY, aX, bX, aY, bY;
+    aX = 4 / ((binW + mod.width()) * (2 * binW + mod.width()));
+    bX = 4 / (binW * (2 * binW + mod.width()));
+    aY = 4 / ((binH + mod.height()) * (2 * binH + mod.height()));
+    bY = 4 / (binH * (2 * binH + mod.height()));
+
+    a = binIdx % binCut;
+    b = binIdx / binCut;
+    c = mod.area() / (binW * binH);
+    // unsigned a{binIdx % binCut}, b{binIdx / binCut};
+
+    dX = oldX - ((a + 0.5) * binW + _placement.boundryLeft());
+    ABSdX = abs(dX);
+    dY = oldY - ((b + 0.5) * binH + _placement.boundryBottom());
+    ABSdY = abs(dY);
+
+    thetaX = thetaByConstrs(ABSdX, mod.width(), binW, aX, bX);
+    thetaY = thetaByConstrs(ABSdY, mod.height(), binH, aY, bY);
+    return c * thetaX * thetaY;
+
+}
+
+double ExampleFunction::thetaByConstrs(double ABSdX, double mW, double binW, double aX, double bX)
+{
+    if (ABSdX <= (binW / 2 + mW / 2))
+    {
+        return 1 - aX * ABSdX * ABSdX;
+    }
+    else if (ABSdX <= (binW + mW / 2))
+    {
+        return bX * (ABSdX - (binW + mW / 2)) * (ABSdX - (binW + mW / 2));
+    }
+    else
+    {
+        return 0;
+    }
+    // v1: from teacher's slide
+    // if (ABSdX <= mW * 0.5 + binW * 0.5)
+    //     return 1 - aX * ABSdX * ABSdX;
+    // else if (ABSdX <= mW * 0.5 + binW)
+    //     return bX * pow(ABSdX - binW - 0.5 * mW, 2);
+    // else
+    //     return 0;
+    // v2: from NTUplace's paper
+    // if (ABSdX <= mW * 0.5 + binW)
+    //     return 1 - aX * ABSdX * ABSdX;
+    // else if (ABSdX <= mW * 0.5 + binW * 2)
+    //     return bX * pow(ABSdX - 2 * binW - 0.5 * mW, 2);
+    // else
+    //     return 0;
+}
+
+/* return: gradient of bell-shape func */
+double ExampleFunction::thetaGradByConstrs(double ABSdX, double mW, double binW, double aX, double bX, double dX, double thetaY, double c)
+{
+    if (ABSdX <= (binW / 2 + mW / 2))
+    {
+        return c * ((-2) * aX * dX) * thetaY;
+    }
+    else if (ABSdX <= (binW + mW / 2))
+    {
+        if (dX > 0)
+        {
+            return c * 2 * bX * (dX - (binW + mW / 2)) * thetaY;
+        }
+        else
+        {
+            return c * 2 * bX * (dX + (binW + mW / 2)) * thetaY;
+        }
+    }
+    else
+    {
+        return 0;
+    }
+    // v1: from teacher's slide
+    // if (ABSdX <= mW * 0.5 + binW * 0.5)
+    //     return c * (-2 * aX * signX * ABSdX) * thetaY;
+    // else if (ABSdX <= mW * 0.5 + binW)
+    //     return c * 2 * bX * signX * (ABSdX - (binW + 0.5 * mW)) * thetaY;
+    // else
+    //     return 0;
+    // v2: from NTUplace's paper
+    // signX = 1;
+    // if (ABSdX <= mW * 0.5 + binW)
+    //     return c * (-2 * aX * signX * ABSdX) * thetaY;
+    // else if (ABSdX <= mW * 0.5 + binW * 2)
+    //     return c * 2 * bX * (ABSdX - signX * (2 * binW - 0.5 * mW)) * thetaY;
+    // else
+    //     return 0;
 }
