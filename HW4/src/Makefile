@@ -25,7 +25,9 @@ test: clean $(EXEC)
 
 EXAMPLE := ../bin/example
 
-example: $(EXAMPLE)
+example: clean $(EXAMPLE) $(EXEC)
+	./$(EXAMPLE) ../testcase/public1/public1.aux ../output/public1.gp.pl
+	./../verifier/verify ../testcase/public1/public1.aux ../output/public1.gp.pl
 
 $(EXAMPLE): Example.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $< $(EXT_OBJS)

@@ -32,11 +32,14 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
 	f = 3 * x[0] * x[0] + 2 * x[0] * x[1] + 2 * x[1] * x[1] + 7; // objective function
 	g[0] = 6 * x[0] + 2 * x[1];									 // gradient function of x[0]
 	g[1] = 2 * x[0] + 4 * x[1];									 // gradient function of x[1]
+	// g[0]=g[1]=-200;
+    // cout << "Done evaluateFG with f: "<<f<<"\n";
 }
 
 void ExampleFunction::evaluateF(const vector<double> &x, double &f)
 {																 // minimize 3*x^2 + 2*x*y + 2*y^2 + 7
 	f = 3 * x[0] * x[0] + 2 * x[0] * x[1] + 2 * x[1] * x[1] + 7; // objective function
+    // cout << "Done evaluateF  with f: "<<f<<"\n";
 }
 
 unsigned ExampleFunction::dimension()

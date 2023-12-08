@@ -22,7 +22,7 @@ public:
     double thetaGradByConstrs(double ABSdX, double mW, double binW, double aX, double bX, double signX, double thetaY, double c);
 
     unsigned numModules{0}, binCut{20}, binTotalNum{binCut * binCut};
-    double eta{90}, boundW{0.0}, boundH{0.0}, binW{0.0}, binH{0.0}, binArea{0.0}, avgDensity{0.0};
+    double gamma{90}, boundW{0.0}, boundH{0.0}, binW{0.0}, binH{0.0}, binArea{0.0}, avgDensity{0.0};
 
 private:
     wrapper::Placement &_placement;

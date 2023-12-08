@@ -5,10 +5,10 @@ class PlaceData
 public:
     PlaceData()
     {}
-    PlaceData(wrapper::Placement &placement, int _binSize, double _eta)
+    PlaceData(wrapper::Placement &placement, int _binSize, double _gamma)
     {
         binSize = _binSize;
-        eta = _eta;
+        gamma = _gamma;
         
         double ttlArea = 0;
         for(unsigned mID = 0; mID < placement.numModules(); ++mID)
@@ -18,7 +18,7 @@ public:
         maxBinArea = ttlArea / (binSize * binSize);
     }
     int binSize;
-    double eta;
+    double gamma;
 
     double maxBinArea{0.0};
 };

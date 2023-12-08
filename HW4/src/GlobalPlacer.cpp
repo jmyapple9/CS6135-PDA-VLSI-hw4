@@ -28,10 +28,10 @@ void GlobalPlacer::randomPlace(vector<double> &sol)
             double height = mod.height();
             double x = rand() % static_cast<int>(coreWidth - width) + _placement.boundryLeft();
             double y = rand() % static_cast<int>(coreHeight - height) + _placement.boundryBottom();
-            mod.setPosition(x, y);
+            _placement.module(i).setPosition(x, y);
         }
-        sol[2 * i] = mod.x();
-        sol[2 * i + 1] = mod.y();
+        sol[2 * i] = _placement.module(i).x();
+        sol[2 * i + 1] = _placement.module(i).y();
     }
 }
 
@@ -66,12 +66,12 @@ void GlobalPlacer::place()
     // if you use other methods, you can skip and delete it directly.
     //////////////////////////////////////////////////////////////////
 
-    ExampleFunction ef(_placement); // require to define the object function and gradient function
+    ExampleFunction ef(_placement);     // require to define the object function and gradient function
     vector<double> sol(ef.dimension()); // solution vector, size: num_blocks*2
     // vector<double> sol2(ef.dimension()); // solution vector, size: num_blocks*2
     // vector<double> x(ef.dimension()); // solution vector, size: num_blocks*2
     // each 2 variables represent the X and Y dimensions of a block
-    
+
     // initialize the solution vector
     // initialPlacement(sol);
     randomPlace(sol);
@@ -82,8 +82,8 @@ void GlobalPlacer::place()
         bRight{_placement.boundryRight()};
 
     NumericalOptimizer no(ef);
-    no.setX(sol);                  // set initial solution
-    no.setStepSizeBound(3000);     // user-specified parameter
+    no.setX(sol);              // set initial solution
+    no.setStepSizeBound(1000); // user-specified parameter
     // no.solve();
 
     unsigned numModules = _placement.numModules();
@@ -91,9 +91,10 @@ void GlobalPlacer::place()
     for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
         cout << "--------- epoch = " << epoch << "---------\n";
-        unsigned numIter = (epoch==0)?300:50;
-        no.setNumIteration(numIter);       // user-specified parameter
-        no.solve(); // Conjugate Gradient solver
+        unsigned numIter = 10;
+        // unsigned numIter = (epoch == 0) ? 300 : 50;
+        no.setNumIteration(numIter); // user-specified parameter
+        no.solve();                  // Conjugate Gradient solver
         for (unsigned nID = 0; nID < numModules; ++nID)
         {
             wrapper::Module mod = _placement.module(nID);
