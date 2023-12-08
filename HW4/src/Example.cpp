@@ -1,11 +1,30 @@
 #include "ExampleFunction.h"
 #include "NumericalOptimizer.h"
+#include "GlobalPlacer.h"
+#include <cstdlib>
 #include <iostream>
 
 using namespace std;
 
-ExampleFunction::ExampleFunction()
+ExampleFunction::ExampleFunction(wrapper::Placement &placement)
+    : _placement(placement)
 {
+    cout << "Enter ExampleFunction constructor\n";
+    boundW = _placement.boundryRight() - _placement.boundryLeft();
+    boundH = _placement.boundryTop() - _placement.boundryBottom();
+    numModules = _placement.numModules();
+
+
+    binTotalNum = binCut * binCut;
+    binW = boundW / binCut;
+    binH = boundH / binCut;
+    binArea = binW * binH;
+
+    avgDensity = 0.0;
+    for (unsigned i = 0; i < numModules; ++i)
+        avgDensity += _placement.module(i).area();
+    avgDensity /= (boundW * boundH);
+    cout << "Done ExampleFunction constructor\n";
 }
 
 void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<double> &g)
@@ -27,7 +46,8 @@ unsigned ExampleFunction::dimension()
 
 int main()
 {						// minimize 3*x^2 + 2*x*y + 2*y^2 + 7
-	ExampleFunction ef; // require to define the object function and gradient function
+    wrapper::Placement placement;
+	ExampleFunction ef(placement); // require to define the object function and gradient function
 
 	vector<double> x(2); // solution vector, number of variables
 	x[0] = 100;			 // initialize the solution vector

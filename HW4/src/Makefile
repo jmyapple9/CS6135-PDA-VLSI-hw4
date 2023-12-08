@@ -5,7 +5,7 @@ EXEC     := ../bin/hw4
 SRCS     := ExampleFunction.cpp GlobalPlacer.cpp main.cpp
 OBJS     := $(SRCS:.cpp=.o)
 
-all: $(EXEC)
+all: clean $(EXEC)
 
 $(EXEC): $(OBJS) $(EXT_OBJS)
 	$(CXX) -o $@ $^
@@ -18,7 +18,7 @@ ifeq (test, $(firstword $(MAKECMDGOALS)))
   $(eval $(TESTCASE):;@:)
 endif
 
-test: $(EXEC)
+test: clean $(EXEC)
 	@echo test on ../testcase/$(TESTCASE)/$(TESTCASE).aux
 	./$(EXEC) ../testcase/$(TESTCASE)/$(TESTCASE).aux ../output/$(TESTCASE).gp.pl
 	./../verifier/verify ../testcase/$(TESTCASE)/$(TESTCASE).aux ../output/$(TESTCASE).gp.pl
