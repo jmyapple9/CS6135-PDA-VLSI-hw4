@@ -1,19 +1,13 @@
 #include "GlobalPlacer.h"
 #include "ExampleFunction.h"
 #include "NumericalOptimizer.h"
-#include <cstdlib>
-#include <iostream>
 
 GlobalPlacer::GlobalPlacer(wrapper::Placement &placement)
     : _placement(placement)
 {
-    // util = PlaceData(
-    //     placement,
-    //     30,
-    //     100.0);
-    // PlaceData util(30, 100.0);
 }
 
+// Randomly place modules implemented by TA
 void GlobalPlacer::randomPlace(vector<double> &sol)
 {
     srand(0);
@@ -35,30 +29,6 @@ void GlobalPlacer::randomPlace(vector<double> &sol)
     }
 }
 
-void GlobalPlacer::initialPlacement(vector<double> &sol)
-{
-    double
-        bTop{_placement.boundryTop()},
-        bBottom{_placement.boundryBottom()},
-        bLeft{_placement.boundryLeft()},
-        bRight{_placement.boundryRight()};
-
-    double
-        xcen{(bLeft + bRight) / 2.0},
-        ycen{(bTop + bBottom) / 2.0};
-
-    for (unsigned nID = 0; nID < _placement.numModules(); ++nID)
-    {
-        auto mod = _placement.module(nID);
-        if (!mod.isFixed())
-        {
-            mod.setCenterPosition(xcen, ycen);
-        }
-        sol[2 * nID] = mod.x();
-        sol[2 * nID + 1] = mod.y();
-    }
-}
-
 void GlobalPlacer::place()
 {
     ///////////////////////////////////////////////////////////////////
@@ -68,13 +38,7 @@ void GlobalPlacer::place()
 
     ExampleFunction ef(_placement);     // require to define the object function and gradient function
     vector<double> sol(ef.dimension()); // solution vector, size: num_blocks*2
-    // vector<double> sol2(ef.dimension()); // solution vector, size: num_blocks*2
-    // vector<double> x(ef.dimension()); // solution vector, size: num_blocks*2
-    // each 2 variables represent the X and Y dimensions of a block
-
-    // initialize the solution vector
-    // initialPlacement(sol);
-    randomPlace(sol);
+    randomPlace(sol);                   // initialize the solution vector
     double
         bTop{_placement.boundryTop()},
         bBottom{_placement.boundryBottom()},
@@ -82,17 +46,17 @@ void GlobalPlacer::place()
         bRight{_placement.boundryRight()};
 
     NumericalOptimizer no(ef);
-    no.setX(sol);              // set initial solution
-    no.setStepSizeBound(1000); // user-specified parameter
+    no.setX(sol);                              // set initial solution
+    no.setStepSizeBound((bTop - bBottom) * 2); // user-specified parameter
     // no.solve();
 
     unsigned numModules = _placement.numModules();
-    unsigned EPOCH = 1;
+    unsigned EPOCH = 2;
     for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
         cout << "--------- epoch = " << epoch << "---------\n";
-        unsigned numIter = 10;
-        // unsigned numIter = (epoch == 0) ? 300 : 50;
+        // unsigned numIter = 10;
+        unsigned numIter = (epoch == 0) ? 100 : 50;
         no.setNumIteration(numIter); // user-specified parameter
         no.solve();                  // Conjugate Gradient solver
         for (unsigned nID = 0; nID < numModules; ++nID)
@@ -110,7 +74,7 @@ void GlobalPlacer::place()
             _placement.module(nID).setPosition(sol[2 * nID], sol[2 * nID + 1]);
         }
         no.setX(sol);
-        ef.increaseLambda();
+        ef.increaseLambda(8000);
     }
 
     cout << "Objective: " << no.objective() << "\n";

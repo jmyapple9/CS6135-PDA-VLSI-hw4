@@ -2,20 +2,17 @@
 #define GLOBALPLACER_H
 
 #include "Wrapper.hpp"
-#include "PlaceData.h"
+#include <iostream>
 #include <vector>
-class GlobalPlacer
+class GlobalPlacer 
 {
 public:
     GlobalPlacer(wrapper::Placement &placement);
-
-    void randomPlace(std::vector<double>& x); // An example of random placement implemented by TA
-    void place();
-    void initialPlacement(std::vector<double>& x);
+	void randomPlace(std::vector<double>& x); // An example of random placement implemented by TA
+	void place();
 
 private:
     wrapper::Placement &_placement;
-    PlaceData util;
 };
 
 #endif // GLOBALPLACER_H
