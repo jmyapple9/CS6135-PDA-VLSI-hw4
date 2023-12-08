@@ -71,8 +71,8 @@ void GlobalPlacer::place()
     // vector<double> sol2(ef.dimension()); // solution vector, size: num_blocks*2
     // vector<double> x(ef.dimension()); // solution vector, size: num_blocks*2
     // each 2 variables represent the X and Y dimensions of a block
-    // x[0] = 100;          // initialize the solution vector
-    // x[1] = 100;
+    
+    // initialize the solution vector
     // initialPlacement(sol);
     randomPlace(sol);
     double
@@ -83,7 +83,6 @@ void GlobalPlacer::place()
 
     NumericalOptimizer no(ef);
     no.setX(sol);                  // set initial solution
-    no.setNumIteration(50);       // user-specified parameter
     no.setStepSizeBound(3000);     // user-specified parameter
     // no.solve();
 
@@ -91,6 +90,9 @@ void GlobalPlacer::place()
     unsigned EPOCH = 1;
     for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
+        cout << "--------- epoch = " << epoch << "---------\n";
+        unsigned numIter = (epoch==0)?300:50;
+        no.setNumIteration(numIter);       // user-specified parameter
         no.solve(); // Conjugate Gradient solver
         for (unsigned nID = 0; nID < numModules; ++nID)
         {
