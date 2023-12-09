@@ -8,66 +8,66 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     chipW = _placement.boundryRight() - _placement.boundryLeft();
     chipH = _placement.boundryTop() - _placement.boundryBottom();
     numModules = _placement.numModules();
+
     lambda = 0;
     binCut = 15;
     gamma = chipH / 700;
+    
     binTotalNum = binCut * binCut;
     binW = chipW / binCut;
     binH = chipH / binCut;
     binArea = binW * binH;
 
     tarDensity = 0.0;
-    for (size_t i = 0; i < numModules; ++i)
-        tarDensity += _placement.module(i).area();
+    for (size_t mID = 0; mID < numModules; ++mID)
+        tarDensity += _placement.module(mID).area();
     tarDensity /= (chipW * chipH);
 }
 
 void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<double> &g)
 {
 
-    double sumX1, sumX2, sumY1, sumY2;
+    double xMaxSum, xMinSum, yMaxSum, yMinSum;
     double thetaX, thetaY, aX, bX, aY, bY, dX, dY, ABSdX, ABSdY, c;
     unsigned a, b;
-
+    // Initialize f and g
     f = 0.0;
     fill(g.begin(), g.end(), 0.0);
     double *Exp = (double *)calloc(numModules * 4, sizeof(double));
-
-    for (size_t i = 0; i < numModules; ++i)
+    // LSE
+    for (size_t mID = 0; mID < numModules; ++mID)
     {
-        Exp[4 * i] = exp(x[2 * i] / gamma);
-        Exp[4 * i + 1] = exp(-x[2 * i] / gamma);
-        Exp[4 * i + 2] = exp(x[2 * i + 1] / gamma);
-        Exp[4 * i + 3] = exp(-x[2 * i + 1] / gamma);
+        Exp[4 * mID] = exp(x[2 * mID] / gamma);
+        Exp[4 * mID + 1] = exp(-x[2 * mID] / gamma);
+        Exp[4 * mID + 2] = exp(x[2 * mID + 1] / gamma);
+        Exp[4 * mID + 3] = exp(-x[2 * mID + 1] / gamma);
     }
 
-    // LSE
-    for (size_t i = 0; i < _placement.numNets(); ++i)
+    for (size_t nID = 0; nID < _placement.numNets(); ++nID)
     {
-        auto Net = _placement.net(i);
+        auto Net = _placement.net(nID);
         size_t numPins = Net.numPins();
-        sumX1 = sumX2 = sumY1 = sumY2 = 0;
-        for (size_t j = 0; j < numPins; ++j)
+        xMaxSum = xMinSum = yMaxSum = yMinSum = 0;
+        for (size_t pID = 0; pID < numPins; ++pID)
         {
-            int mID = Net.pin(j).moduleId();
-            sumX1 += Exp[4 * mID];
-            sumX2 += Exp[4 * mID + 1];
-            sumY1 += Exp[4 * mID + 2];
-            sumY2 += Exp[4 * mID + 3];
+            int mID = Net.pin(pID).moduleId();
+            xMaxSum += Exp[4 * mID];
+            xMinSum += Exp[4 * mID + 1];
+            yMaxSum += Exp[4 * mID + 2];
+            yMinSum += Exp[4 * mID + 3];
         }
 
-        f += log(sumX1) + log(sumX2) + log(sumY1) + log(sumY2);
+        f += log(xMaxSum) + log(xMinSum) + log(yMaxSum) + log(yMinSum);
         // LSE's gradient: sum on g
-        for (size_t j = 0; j < numPins; j++)
+        for (size_t pID = 0; pID < numPins; ++pID)
         {
-            wrapper::Module mod = _placement.module(i);
-            int mID = Net.pin(j).moduleId();
-            if (!mod.isFixed())
+            int mID = Net.pin(pID).moduleId();
+            if (!_placement.module(mID).isFixed())
             {
-                g[2 * mID] += Exp[4 * mID] / (gamma * sumX1);
-                g[2 * mID] -= Exp[4 * mID + 1] / (gamma * sumX2);
-                g[2 * mID + 1] += Exp[4 * mID + 2] / (gamma * sumY1);
-                g[2 * mID + 1] -= Exp[4 * mID + 3] / (gamma * sumY2);
+                g[2 * mID] += Exp[4 * mID] / (gamma * xMaxSum);
+                g[2 * mID] -= Exp[4 * mID + 1] / (gamma * xMinSum);
+                g[2 * mID + 1] += Exp[4 * mID + 2] / (gamma * yMaxSum);
+                g[2 * mID + 1] -= Exp[4 * mID + 3] / (gamma * yMinSum);
             }
             else
             {
@@ -85,9 +85,9 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
 
     for (unsigned binIdx = 0; binIdx < binTotalNum; ++binIdx)
     {
-        for (size_t i = 0; i < numModules; ++i)
+        for (size_t mID = 0; mID < numModules; ++mID)
         {
-            wrapper::Module mod = _placement.module(i);
+            wrapper::Module mod = _placement.module(mID);
             if (!mod.isFixed())
             {
                 aX = 4 / ((binW + mod.width()) * (2 * binW + mod.width()));
@@ -99,9 +99,9 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
                 b = binIdx / binCut;
                 c = mod.area() / binArea;
 
-                dX = x[2 * i] - ((a + 0.5) * binW + _placement.boundryLeft());
+                dX = x[2 * mID] - ((a + 0.5) * binW + _placement.boundryLeft());
                 ABSdX = abs(dX);
-                dY = x[2 * i + 1] - ((b + 0.5) * binH + _placement.boundryBottom());
+                dY = x[2 * mID + 1] - ((b + 0.5) * binH + _placement.boundryBottom());
                 ABSdY = abs(dY);
 
                 thetaX = thetaByConstrs(ABSdX, mod.width(), binW, aX, bX);
@@ -109,17 +109,17 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
 
                 binDensity[binIdx] += c * thetaX * thetaY;
 
-                grad[2 * i] = thetaGradByConstrs(ABSdX, mod.width(), binW, aX, bX, dX, thetaY, c);
-                grad[2 * i + 1] = thetaGradByConstrs(ABSdY, mod.height(), binH, aY, bY, dY, thetaX, c);
+                grad[2 * mID] = thetaGradByConstrs(ABSdX, mod.width(), binW, aX, bX, dX, thetaY, c);
+                grad[2 * mID + 1] = thetaGradByConstrs(ABSdY, mod.height(), binH, aY, bY, dY, thetaX, c);
             }
         }
 
         f += lambda * (binDensity[binIdx] - tarDensity) * (binDensity[binIdx] - tarDensity);
         // bell shape's gradient: sum on g
-        for (size_t j = 0; j < numModules; ++j)
+        for (size_t mID = 0; mID < numModules; ++mID)
         {
-            g[2 * j] += lambda * 2 * (binDensity[binIdx] - tarDensity) * grad[2 * j];
-            g[2 * j + 1] += lambda * 2 * (binDensity[binIdx] - tarDensity) * grad[2 * j + 1];
+            g[2 * mID] += lambda * 2 * (binDensity[binIdx] - tarDensity) * grad[2 * mID];
+            g[2 * mID + 1] += lambda * 2 * (binDensity[binIdx] - tarDensity) * grad[2 * mID + 1];
         }
     }
 }
@@ -127,35 +127,35 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
 void ExampleFunction::evaluateF(const vector<double> &x, double &f)
 {
 
-    double sumX1, sumX2, sumY1, sumY2;
+    double xMaxSum, xMinSum, yMaxSum, yMinSum;
 
     f = 0.0;
     double *Exp = (double *)calloc(numModules * 4, sizeof(double));
 
     // LSE
-    for (size_t i = 0; i < numModules; ++i)
+    for (size_t mID = 0; mID < numModules; ++mID)
     {
-        Exp[4 * i] = exp(x[2 * i] / gamma);
-        Exp[4 * i + 1] = exp(-x[2 * i] / gamma);
-        Exp[4 * i + 2] = exp(x[2 * i + 1] / gamma);
-        Exp[4 * i + 3] = exp(-x[2 * i + 1] / gamma);
+        Exp[4 * mID] = exp(x[2 * mID] / gamma);
+        Exp[4 * mID + 1] = exp(-x[2 * mID] / gamma);
+        Exp[4 * mID + 2] = exp(x[2 * mID + 1] / gamma);
+        Exp[4 * mID + 3] = exp(-x[2 * mID + 1] / gamma);
     }
 
-    for (size_t i = 0; i < _placement.numNets(); ++i)
+    for (size_t nID = 0; nID < _placement.numNets(); ++nID)
     {
-        auto Net = _placement.net(i);
+        auto Net = _placement.net(nID);
         size_t numPins = Net.numPins();
-        sumX1 = sumX2 = sumY1 = sumY2 = 0;
-        for (size_t j = 0; j < numPins; ++j)
+        xMaxSum = xMinSum = yMaxSum = yMinSum = 0;
+        for (size_t pID = 0; pID < numPins; ++pID)
         {
-            int mID = Net.pin(j).moduleId();
-            sumX1 += Exp[4 * mID];
-            sumX2 += Exp[4 * mID + 1];
-            sumY1 += Exp[4 * mID + 2];
-            sumY2 += Exp[4 * mID + 3];
+            int mID = Net.pin(pID).moduleId();
+            xMaxSum += Exp[4 * mID];
+            xMinSum += Exp[4 * mID + 1];
+            yMaxSum += Exp[4 * mID + 2];
+            yMinSum += Exp[4 * mID + 3];
         }
 
-        f += log(sumX1) + log(sumX2) + log(sumY1) + log(sumY2);
+        f += log(xMaxSum) + log(xMinSum) + log(yMaxSum) + log(yMinSum);
     }
     if (lambda == 0)
         return;
@@ -165,12 +165,12 @@ void ExampleFunction::evaluateF(const vector<double> &x, double &f)
 
     for (unsigned binIdx = 0; binIdx < binTotalNum; ++binIdx)
     {
-        for (size_t i = 0; i < numModules; ++i)
+        for (size_t mID = 0; mID < numModules; ++mID)
         {
-            wrapper::Module mod = _placement.module(i);
+            wrapper::Module mod = _placement.module(mID);
             if (!mod.isFixed())
             {
-                binDensity[binIdx] += bellShapeFunc(i, binIdx, x[2 * i], x[2 * i + 1]);
+                binDensity[binIdx] += bellShapeFunc(mID, binIdx, x[2 * mID], x[2 * mID + 1]);
             }
         }
         f += lambda * (binDensity[binIdx] - tarDensity) * (binDensity[binIdx] - tarDensity);
@@ -187,9 +187,9 @@ void ExampleFunction::increaseLambda(unsigned offset)
 {
     lambda += offset;
 }
-double ExampleFunction::bellShapeFunc(unsigned i, unsigned binIdx, double oldX, double oldY)
+double ExampleFunction::bellShapeFunc(unsigned mID, unsigned binIdx, double oldX, double oldY)
 {
-    auto mod = _placement.module(i);
+    auto mod = _placement.module(mID);
     double mW, mH, thetaX, thetaY, dX, dY, ABSdX, ABSdY, aX, bX, aY, bY;
     mW = mod.width(), mH = mod.height();
 
