@@ -10,20 +10,20 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     : _placement(placement)
 {
     cout << "Enter ExampleFunction constructor\n";
-    boundW = _placement.boundryRight() - _placement.boundryLeft();
-    boundH = _placement.boundryTop() - _placement.boundryBottom();
+    chipW = _placement.boundryRight() - _placement.boundryLeft();
+    chipH = _placement.boundryTop() - _placement.boundryBottom();
     numModules = _placement.numModules();
 
 
     binTotalNum = binCut * binCut;
-    binW = boundW / binCut;
-    binH = boundH / binCut;
+    binW = chipW / binCut;
+    binH = chipH / binCut;
     binArea = binW * binH;
 
-    avgDensity = 0.0;
+    tarDensity = 0.0;
     for (unsigned i = 0; i < numModules; ++i)
-        avgDensity += _placement.module(i).area();
-    avgDensity /= (boundW * boundH);
+        tarDensity += _placement.module(i).area();
+    tarDensity /= (chipW * chipH);
     cout << "Done ExampleFunction constructor\n";
 }
 

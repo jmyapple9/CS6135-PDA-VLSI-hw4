@@ -1,0 +1,238 @@
+unsigned numIter = (epoch == 0) ? 100 : 50;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 500;
+binCut{15}
+
+####################### SUMMARY 1 ########################
+Benchmark: public1
+
+Global HPWL: 77072978
+ Legal HPWL: 99699956    Time: 0.15 sec (0.00 min)
+Detail HPWL: 83608731    Time: 1.08 sec (0.02 min)
+========================================================
+       HPWL: 83608731    Time: 1.23 sec (0.02 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+unsigned numIter = (epoch == 0) ? 100 : 50;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 700; --> all testcase fine (LIMIT! public2 gives Nan when gamma = chipH / 710)
+binCut{15}
+
+####################### SUMMARY 2 ########################
+Benchmark: public1
+
+Global HPWL: 70009600
+ Legal HPWL: 93840521    Time: 0.13 sec (0.00 min)
+Detail HPWL: 79355538    Time: 0.85 sec (0.01 min)
+========================================================
+       HPWL: 79355538    Time: 0.98 sec (0.02 min)
+
+unsigned numIter = (epoch == 0) ? 100 : 25;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 5;
+ef.increaseLambda(8000);
+gamma = chipH / 700; --> all testcase fine (LIMIT! public2 gives Nan when gamma = chipH / 710)
+binCut{15}
+
+####################### SUMMARY 3 ########################
+Benchmark: public1
+
+Global HPWL: 81668605
+ Legal HPWL: 101240615    Time: 0.12 sec (0.00 min)
+Detail HPWL: 84145486    Time: 1.57 sec (0.03 min)
+========================================================
+       HPWL: 84145486    Time: 1.69 sec (0.03 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+unsigned numIter = (epoch == 0) ? 100 : 50;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 1000; --> some testcase Nan
+binCut{15}
+
+####################### SUMMARY 4 ########################
+Benchmark: public1
+
+Global HPWL: 58943801
+ Legal HPWL: 87062655    Time: 0.21 sec (0.00 min)
+Detail HPWL: 72235969    Time: 0.81 sec (0.01 min)
+========================================================
+       HPWL: 72235969    Time: 1.02 sec (0.02 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+unsigned numIter = (epoch == 0) ? 100 : 100;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 1000; --> some testcase Nan
+binCut{15}
+
+####################### SUMMARY 5 ########################
+Benchmark: public1
+
+Global HPWL: 56384854
+ Legal HPWL: 88492361    Time: 0.11 sec (0.00 min)
+Detail HPWL: 71597941    Time: 0.86 sec (0.01 min)
+========================================================
+       HPWL: 71597941    Time: 0.97 sec (0.02 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+比較 summary 3, 4 可發現在同 total numIter (藉由調整 epoch & numIter) 時，偏向使用小 epoch + 大 numIter
+summary 5 更加證實以上看法
+
+unsigned numIter = (epoch == 0) ? 100 : 70;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 700;
+binCut{15}
+
+####################### SUMMARY 6 ########################
+Benchmark: public1
+
+Global HPWL: 58178055
+ Legal HPWL: 87703573    Time: 0.11 sec (0.00 min)
+Detail HPWL: 71741249    Time: 1.01 sec (0.02 min)
+========================================================
+       HPWL: 71741249    Time: 1.12 sec (0.02 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+summary 5, 6 差不多，但 6 的 numIter 少更能減少 runtime
+
+unsigned numIter = (epoch == 0) ? 100 : 100;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 700;
+binCut{15}
+
+####################### SUMMARY 7 ########################
+Benchmark: public2
+
+Global HPWL: 15108272
+ Legal HPWL: 18109166    Time: 0.90 sec (0.01 min)
+Detail HPWL: 16066304    Time: 4.12 sec (0.07 min)
+========================================================
+       HPWL: 16066304    Time: 5.02 sec (0.08 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+unsigned numIter = (epoch == 0) ? 100 : 200;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 700;
+binCut{15}
+
+####################### SUMMARY 8 ########################
+Benchmark: public2
+
+Global HPWL: 14885939
+ Legal HPWL: 18194204    Time: 0.93 sec (0.02 min)
+Detail HPWL: 15989044    Time: 3.51 sec (0.06 min)
+========================================================
+       HPWL: 15989044    Time: 4.44 sec (0.07 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+從 summary 7, 8 可以看出，numIter 100 以下就夠了，在大幫助不大。
+
+觀察去年 top 5 results，可知成績和 public2 的 WL 成正相關，因此接下來專心 tune public2 即可! XDD
+先測試以下參數是否能跑過 23789 (1 已經由 summary 6 驗證)
+
+unsigned numIter = (epoch == 0) ? 100 : 70;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 3;
+ef.increaseLambda(8000);
+gamma = chipH / 700;
+binCut{15}
+
+####################### SUMMARY 9 ########################
+Benchmark: public2
+
+Global HPWL: 16013874
+ Legal HPWL: 18864375    Time: 1.23 sec (0.02 min)
+Detail HPWL: 16280658    Time: 4.62 sec (0.08 min)
+========================================================
+       HPWL: 16280658    Time: 5.85 sec (0.10 min)
+
+####################### SUMMARY ########################
+Benchmark: public3
+
+Global HPWL: 334980577
+ Legal HPWL: 625086582    Time: 1.61 sec (0.03 min)
+Detail HPWL: 500524648    Time: 4.87 sec (0.08 min)
+========================================================
+       HPWL: 500524648    Time: 6.48 sec (0.11 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+####################### SUMMARY ########################
+Benchmark: public7
+
+Global HPWL: 188853229
+ Legal HPWL: 259945715    Time: 0.32 sec (0.01 min)
+Detail HPWL: 218493489    Time: 2.27 sec (0.04 min)
+========================================================
+       HPWL: 218493489    Time: 2.60 sec (0.04 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+####################### SUMMARY ########################
+Benchmark: public8
+
+Global HPWL: 356843961
+ Legal HPWL: 561089999    Time: 0.34 sec (0.01 min)
+Detail HPWL: 466714400    Time: 3.17 sec (0.05 min)
+========================================================
+       HPWL: 466714400    Time: 3.50 sec (0.06 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+####################### SUMMARY ########################
+Benchmark: public9
+
+Global HPWL: 468159879
+ Legal HPWL: 770711222    Time: 2.79 sec (0.05 min)
+Detail HPWL: 612101000    Time: 10.56 sec (0.18 min)
+========================================================
+       HPWL: 612101000    Time: 13.35 sec (0.22 min)
+
+[Success] Your output file satisfies our basic requirements.
+
+
+
+
+
+
+
+
+
+
+
+
+unsigned numIter = (epoch == 0) ? 100 : 50;
+no.setStepSizeBound((bTop - bBottom) * 2);
+EPOCH = 5;
+ef.increaseLambda(8000);
+gamma = chipH / 700; --> all testcase fine (LIMIT! public2 gives Nan when gamma = chipH / 710)
+binCut{15}
+
+####################### SUMMARY ? ########################
+Benchmark: public9
+
+Global HPWL: 429232772
+ Legal HPWL: 643413183    Time: 0.58 sec (0.01 min)
+Detail HPWL: 520083315    Time: 5.98 sec (0.10 min)
+========================================================
+       HPWL: 520083315    Time: 6.56 sec (0.11 min)

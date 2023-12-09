@@ -50,13 +50,14 @@ void GlobalPlacer::place()
     no.setStepSizeBound((bTop - bBottom) * 2); // user-specified parameter
     // no.solve();
 
-    unsigned numModules = _placement.numModules();
-    unsigned EPOCH = 2;
+    unsigned numModules, EPOCH, numIter;
+    numModules = _placement.numModules();
+    numIter = 100;
+    EPOCH = 3;
     for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
         cout << "--------- epoch = " << epoch << "---------\n";
-        // unsigned numIter = 10;
-        unsigned numIter = (epoch == 0) ? 100 : 50;
+        numIter = (epoch == 0) ? 100 : 70;
         no.setNumIteration(numIter); // user-specified parameter
         no.solve();                  // Conjugate Gradient solver
         for (unsigned nID = 0; nID < numModules; ++nID)
