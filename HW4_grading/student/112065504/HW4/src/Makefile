@@ -1,4 +1,4 @@
-CXX      := g++ -no-pie
+CXX      := g++
 CXXFLAGS := -std=c++11 -O3 -Wall -Wextra -I../include
 EXT_OBJS := $(wildcard ../obj/*.o)
 EXEC     := ../bin/hw4
