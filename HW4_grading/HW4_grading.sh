@@ -4,7 +4,9 @@
 homeworkName=HW4
 binaryName=hw4
 timeLimit=600
-testcasePool="public1 public2 public3"
+# testcasePool="public7 public8 public9"
+# testcasePool="public1 public2 public3"
+testcasePool="public1 public2 public3 public7 public8 public9"
 
 # Set the directories and paths
 root=$(pwd)

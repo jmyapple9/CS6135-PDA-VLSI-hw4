@@ -1,0 +1,1700 @@
+rm -f ../bin/hw4 ExampleFunction.o GlobalPlacer.o main.o ../bin/example
+g++ -std=c++11 -O3 -Wall -Wextra -I../include -c ExampleFunction.cpp -o ExampleFunction.o
+g++ -std=c++11 -O3 -Wall -Wextra -I../include -c GlobalPlacer.cpp -o GlobalPlacer.o
+g++ -std=c++11 -O3 -Wall -Wextra -I../include -c main.cpp -o main.o
+g++ -o ../bin/hw4 ExampleFunction.o GlobalPlacer.o main.o ../obj/BookshelfParser.o ../obj/NumericalOptimizer.o ../obj/Util.o ../obj/Placement.o ../obj/Wrapper.o
+test on ../testcase/public2/public2.aux
+./../bin/hw4 ../testcase/public2/public2.aux ../output/public2.gp.pl
+##################### Parse Input ######################
+Benchmark: public2
+Core region: (0, 0) (2360, 2368)
+HPWL: 3333921
+
+################### Global Placement ###################
+--------- epoch = 0---------
+Objective = 1.84874e+07 ||grad|| = 155.319
+Objective = 1.77862e+07 ||grad|| = 151.944
+Objective = 1.71033e+07 ||grad|| = 148.92
+Objective = 1.64393e+07 ||grad|| = 145.774
+Objective = 1.57919e+07 ||grad|| = 142.784
+Objective = 1.51598e+07 ||grad|| = 140.146
+Objective = 1.45413e+07 ||grad|| = 137.615
+Objective = 1.39372e+07 ||grad|| = 135.457
+Objective = 1.33446e+07 ||grad|| = 133.172
+Objective = 1.27657e+07 ||grad|| = 131.025
+Objective = 1.22002e+07 ||grad|| = 128.939
+Objective = 1.1646e+07 ||grad|| = 126.831
+Objective = 1.11047e+07 ||grad|| = 124.825
+Objective = 1.05756e+07 ||grad|| = 122.866
+Objective = 1.0059e+07 ||grad|| = 121.02
+Objective = 9.55316e+06 ||grad|| = 119.119
+Objective = 9.05897e+06 ||grad|| = 117.227
+Objective = 8.57674e+06 ||grad|| = 115.533
+Objective = 8.10613e+06 ||grad|| = 113.719
+Objective = 7.64797e+06 ||grad|| = 111.634
+Objective = 7.20217e+06 ||grad|| = 109.909
+Objective = 6.76764e+06 ||grad|| = 108.19
+Objective = 6.34624e+06 ||grad|| = 106.184
+Objective = 5.93565e+06 ||grad|| = 104.579
+Objective = 5.53739e+06 ||grad|| = 102.559
+Objective = 5.15237e+06 ||grad|| = 100.625
+Objective = 4.78216e+06 ||grad|| = 98.8831
+Objective = 4.42302e+06 ||grad|| = 97.503
+Objective = 4.08071e+06 ||grad|| = 95.1878
+Objective = 3.75205e+06 ||grad|| = 93.8564
+Objective = 3.43914e+06 ||grad|| = 92.1506
+Objective = 3.14267e+06 ||grad|| = 91.0468
+Objective = 2.86305e+06 ||grad|| = 90.1248
+Objective = 2.60037e+06 ||grad|| = 89.8934
+Objective = 2.35456e+06 ||grad|| = 89.9003
+Objective = 2.1254e+06 ||grad|| = 89.7826
+Objective = 1.9163e+06 ||grad|| = 90.3462
+Objective = 1.72883e+06 ||grad|| = 91.7884
+Objective = 1.57042e+06 ||grad|| = 92.6688
+Objective = 1.44009e+06 ||grad|| = 94.7581
+Objective = 1.33025e+06 ||grad|| = 95.561
+Objective = 1.2416e+06 ||grad|| = 98.8898
+Objective = 1.18187e+06 ||grad|| = 100.001
+Objective = 1.16714e+06 ||grad|| = 104.721
+Objective = 1.13573e+06 ||grad|| = 105.843
+Objective = 1.06727e+06 ||grad|| = 92.8407
+Objective = 1.01684e+06 ||grad|| = 69.7728
+Objective = 974333 ||grad|| = 62.6043
+Objective = 934988 ||grad|| = 58.2663
+Objective = 901629 ||grad|| = 49.1781
+Objective = 872855 ||grad|| = 48.0839
+Objective = 850104 ||grad|| = 43.9711
+Objective = 835980 ||grad|| = 35.4764
+Objective = 828916 ||grad|| = 37.9569
+Objective = 822756 ||grad|| = 34.2042
+Objective = 815444 ||grad|| = 37.8353
+Objective = 807681 ||grad|| = 41.4365
+Objective = 800130 ||grad|| = 38.7502
+Objective = 795201 ||grad|| = 36.3959
+Objective = 793045 ||grad|| = 40.7749
+Objective = 791295 ||grad|| = 35.2806
+Objective = 790355 ||grad|| = 50.3594
+Objective = 783667 ||grad|| = 48.3164
+Objective = 780183 ||grad|| = 25.982
+Objective = 777977 ||grad|| = 19.2817
+Objective = 775586 ||grad|| = 19.9793
+Objective = 774692 ||grad|| = 11.9246
+Objective = 773048 ||grad|| = 19.2931
+Objective = 773019 ||grad|| = 13.6989
+!
+Objective = 773019 ||grad|| = 20.2209
+Objective = 772580 ||grad|| = 20.2209
+!
+Objective = 772580 ||grad|| = 22.2988
+Objective = 772541 ||grad|| = 22.2988
+!
+Objective = 772541 ||grad|| = 25.6641
+Objective = 772157 ||grad|| = 25.6641
+!
+Objective = 772157 ||grad|| = 25.0972
+Objective = 772109 ||grad|| = 25.0972
+!
+Objective = 772109 ||grad|| = 26.9962
+Objective = 771770 ||grad|| = 26.9962
+!
+Objective = 771770 ||grad|| = 25.9825
+Objective = 771727 ||grad|| = 25.9825
+!
+Objective = 771727 ||grad|| = 27.4324
+Objective = 771427 ||grad|| = 27.4324
+!
+Objective = 771427 ||grad|| = 26.4504
+Objective = 771389 ||grad|| = 26.4504
+!
+Objective = 771389 ||grad|| = 27.6601
+Objective = 771117 ||grad|| = 27.6601
+!
+Objective = 771117 ||grad|| = 26.7445
+Objective = 771081 ||grad|| = 26.7445
+!
+Objective = 771081 ||grad|| = 27.7911
+Objective = 770831 ||grad|| = 27.7911
+!
+Objective = 770831 ||grad|| = 26.9407
+Objective = 770795 ||grad|| = 26.9407
+!
+Objective = 770795 ||grad|| = 27.8681
+Objective = 770563 ||grad|| = 27.8681
+!
+Objective = 770563 ||grad|| = 27.0727
+Objective = 770527 ||grad|| = 27.0727
+!
+Objective = 770527 ||grad|| = 27.9038
+Objective = 770310 ||grad|| = 27.9038
+!
+Objective = 770310 ||grad|| = 27.1604
+--------- epoch = 1---------
+Objective = 2.06315e+08 ||grad|| = 5702.99
+Objective = 1.59252e+08 ||grad|| = 10637.1
+Objective = 1.26339e+08 ||grad|| = 10538.7
+Objective = 1.03237e+08 ||grad|| = 5150.85
+Objective = 7.94368e+07 ||grad|| = 5922.3
+Objective = 6.18331e+07 ||grad|| = 4880.25
+Objective = 4.9331e+07 ||grad|| = 3485.54
+Objective = 4.14242e+07 ||grad|| = 2323.35
+Objective = 3.3377e+07 ||grad|| = 1727.79
+Objective = 2.80157e+07 ||grad|| = 1770.77
+Objective = 2.41218e+07 ||grad|| = 1060.14
+Objective = 2.00682e+07 ||grad|| = 966.257
+Objective = 1.74089e+07 ||grad|| = 826.035
+Objective = 1.53882e+07 ||grad|| = 573.3
+Objective = 1.39177e+07 ||grad|| = 418.159
+Objective = 1.27825e+07 ||grad|| = 336.585
+Objective = 1.19198e+07 ||grad|| = 254.748
+Objective = 1.11411e+07 ||grad|| = 231.802
+Objective = 1.04096e+07 ||grad|| = 218.049
+Objective = 9.7974e+06 ||grad|| = 206.198
+Objective = 9.31293e+06 ||grad|| = 173.431
+Objective = 8.89001e+06 ||grad|| = 159.978
+Objective = 8.53704e+06 ||grad|| = 144.541
+Objective = 8.22182e+06 ||grad|| = 133.449
+Objective = 7.95807e+06 ||grad|| = 122.673
+Objective = 7.72942e+06 ||grad|| = 116.788
+Objective = 7.48998e+06 ||grad|| = 112.445
+Objective = 7.26372e+06 ||grad|| = 107.312
+Objective = 7.06186e+06 ||grad|| = 103.632
+Objective = 6.88388e+06 ||grad|| = 98.0265
+Objective = 6.72088e+06 ||grad|| = 95.943
+Objective = 6.56256e+06 ||grad|| = 95.099
+Objective = 6.41222e+06 ||grad|| = 93.2744
+Objective = 6.27785e+06 ||grad|| = 93.112
+Objective = 6.14843e+06 ||grad|| = 92.8891
+Objective = 6.0261e+06 ||grad|| = 92.0841
+Objective = 5.91986e+06 ||grad|| = 89.6781
+Objective = 5.82078e+06 ||grad|| = 89.1827
+Objective = 5.7204e+06 ||grad|| = 90.4032
+Objective = 5.62499e+06 ||grad|| = 89.9026
+Objective = 5.53424e+06 ||grad|| = 90.1327
+Objective = 5.44844e+06 ||grad|| = 89.9141
+Objective = 5.37193e+06 ||grad|| = 89.9158
+Objective = 5.30045e+06 ||grad|| = 89.8716
+Objective = 5.23041e+06 ||grad|| = 90.7115
+Objective = 5.16132e+06 ||grad|| = 90.4079
+Objective = 5.09251e+06 ||grad|| = 91.1143
+Objective = 5.02145e+06 ||grad|| = 91.4041
+Objective = 4.95489e+06 ||grad|| = 91.6428
+Objective = 4.89932e+06 ||grad|| = 91.4686
+Objective = 4.84329e+06 ||grad|| = 91.7956
+Objective = 4.78695e+06 ||grad|| = 91.3623
+Objective = 4.73174e+06 ||grad|| = 92.0769
+Objective = 4.68088e+06 ||grad|| = 92.1868
+Objective = 4.63256e+06 ||grad|| = 92.6936
+Objective = 4.5788e+06 ||grad|| = 92.9634
+Objective = 4.52548e+06 ||grad|| = 93.3184
+Objective = 4.47392e+06 ||grad|| = 93.3832
+Objective = 4.42451e+06 ||grad|| = 93.6736
+Objective = 4.37696e+06 ||grad|| = 94.4363
+Objective = 4.32804e+06 ||grad|| = 94.838
+Objective = 4.28143e+06 ||grad|| = 94.927
+Objective = 4.24138e+06 ||grad|| = 94.921
+Objective = 4.23142e+06 ||grad|| = 85.7689
+Objective = 4.23083e+06 ||grad|| = 99.6156
+Objective = 4.1954e+06 ||grad|| = 99.0566
+!
+Objective = 4.1954e+06 ||grad|| = 99.4069
+Objective = 4.1846e+06 ||grad|| = 99.4069
+!
+Objective = 4.1846e+06 ||grad|| = 102.303
+Objective = 4.1606e+06 ||grad|| = 102.303
+--------- epoch = 2---------
+Objective = 4.55578e+06 ||grad|| = 115.201
+!
+Objective = 4.55578e+06 ||grad|| = 110.355
+Objective = 4.55563e+06 ||grad|| = 110.355
+!
+Objective = 4.55563e+06 ||grad|| = 116.342
+Objective = 4.52597e+06 ||grad|| = 116.342
+!
+Objective = 4.52597e+06 ||grad|| = 116.757
+Objective = 4.52386e+06 ||grad|| = 116.757
+!
+Objective = 4.52386e+06 ||grad|| = 118.816
+Objective = 4.49996e+06 ||grad|| = 118.816
+!
+Objective = 4.49996e+06 ||grad|| = 117.073
+Objective = 4.40461e+06 ||grad|| = 117.073
+Objective = 4.34104e+06 ||grad|| = 87.6725
+Objective = 4.31399e+06 ||grad|| = 56.514
+Objective = 4.30642e+06 ||grad|| = 46.7441
+Objective = 4.30345e+06 ||grad|| = 57.5737
+Objective = 4.29757e+06 ||grad|| = 55.8811
+!
+Objective = 4.29757e+06 ||grad|| = 52.1396
+Objective = 4.29705e+06 ||grad|| = 52.1396
+!
+Objective = 4.29705e+06 ||grad|| = 61.8264
+Objective = 4.29166e+06 ||grad|| = 61.8264
+!
+Objective = 4.29166e+06 ||grad|| = 59.318
+Objective = 4.29037e+06 ||grad|| = 59.318
+!
+Objective = 4.29037e+06 ||grad|| = 64.1804
+Objective = 4.28609e+06 ||grad|| = 64.1804
+!
+Objective = 4.28609e+06 ||grad|| = 62.1983
+Objective = 4.28465e+06 ||grad|| = 62.1983
+!
+Objective = 4.28465e+06 ||grad|| = 65.3399
+Objective = 4.28091e+06 ||grad|| = 65.3399
+!
+Objective = 4.28091e+06 ||grad|| = 63.431
+Objective = 4.27941e+06 ||grad|| = 63.431
+!
+Objective = 4.27941e+06 ||grad|| = 65.7732
+Objective = 4.27615e+06 ||grad|| = 65.7732
+!
+Objective = 4.27615e+06 ||grad|| = 64.1343
+Objective = 4.27473e+06 ||grad|| = 64.1343
+!
+Objective = 4.27473e+06 ||grad|| = 65.9965
+Objective = 4.27192e+06 ||grad|| = 65.9965
+!
+Objective = 4.27192e+06 ||grad|| = 64.6443
+Objective = 4.2704e+06 ||grad|| = 64.6443
+!
+Objective = 4.2704e+06 ||grad|| = 66.0333
+Objective = 4.26787e+06 ||grad|| = 66.0333
+!
+Objective = 4.26787e+06 ||grad|| = 65.0334
+Objective = 4.26634e+06 ||grad|| = 65.0334
+!
+Objective = 4.26634e+06 ||grad|| = 66.2515
+Objective = 4.26403e+06 ||grad|| = 66.2515
+!
+Objective = 4.26403e+06 ||grad|| = 65.2742
+Objective = 4.26244e+06 ||grad|| = 65.2742
+!
+Objective = 4.26244e+06 ||grad|| = 66.1837
+Objective = 4.26038e+06 ||grad|| = 66.1837
+!
+Objective = 4.26038e+06 ||grad|| = 65.5893
+Objective = 4.25875e+06 ||grad|| = 65.5893
+!
+Objective = 4.25875e+06 ||grad|| = 66.2916
+Objective = 4.25698e+06 ||grad|| = 66.2916
+!
+Objective = 4.25698e+06 ||grad|| = 65.7923
+Objective = 4.2554e+06 ||grad|| = 65.7923
+!
+Objective = 4.2554e+06 ||grad|| = 66.222
+Objective = 4.25387e+06 ||grad|| = 66.222
+!
+Objective = 4.25387e+06 ||grad|| = 66.013
+Objective = 4.25228e+06 ||grad|| = 66.013
+!
+Objective = 4.25228e+06 ||grad|| = 66.285
+Objective = 4.2509e+06 ||grad|| = 66.285
+!
+Objective = 4.2509e+06 ||grad|| = 66.2185
+Objective = 4.24907e+06 ||grad|| = 66.2185
+!
+Objective = 4.24907e+06 ||grad|| = 66.1876
+Objective = 4.24784e+06 ||grad|| = 66.1876
+!
+Objective = 4.24784e+06 ||grad|| = 66.3715
+Objective = 4.24609e+06 ||grad|| = 66.3715
+!
+Objective = 4.24609e+06 ||grad|| = 66.2587
+Objective = 4.24504e+06 ||grad|| = 66.2587
+!
+Objective = 4.24504e+06 ||grad|| = 66.4172
+Objective = 4.24338e+06 ||grad|| = 66.4172
+Objective: 4.24338e+06
+Current best HPWL: 1.21902e+07
+--------- epoch = 0---------
+Objective = 1.85364e+07 ||grad|| = 155.26
+Objective = 1.78364e+07 ||grad|| = 151.682
+Objective = 1.71557e+07 ||grad|| = 148.599
+Objective = 1.6492e+07 ||grad|| = 145.57
+Objective = 1.58448e+07 ||grad|| = 142.768
+Objective = 1.52121e+07 ||grad|| = 140.08
+Objective = 1.45933e+07 ||grad|| = 137.755
+Objective = 1.39883e+07 ||grad|| = 135.443
+Objective = 1.33973e+07 ||grad|| = 133.15
+Objective = 1.28187e+07 ||grad|| = 130.975
+Objective = 1.2253e+07 ||grad|| = 128.883
+Objective = 1.16999e+07 ||grad|| = 126.944
+Objective = 1.11588e+07 ||grad|| = 124.806
+Objective = 1.06308e+07 ||grad|| = 122.863
+Objective = 1.01155e+07 ||grad|| = 120.995
+Objective = 9.61057e+06 ||grad|| = 118.99
+Objective = 9.11859e+06 ||grad|| = 117.005
+Objective = 8.63727e+06 ||grad|| = 115.563
+Objective = 8.16755e+06 ||grad|| = 113.454
+Objective = 7.70994e+06 ||grad|| = 111.638
+Objective = 7.26437e+06 ||grad|| = 109.903
+Objective = 6.82969e+06 ||grad|| = 108.066
+Objective = 6.40746e+06 ||grad|| = 106.335
+Objective = 5.99596e+06 ||grad|| = 104.48
+Objective = 5.5968e+06 ||grad|| = 102.841
+Objective = 5.20962e+06 ||grad|| = 101.147
+Objective = 4.83578e+06 ||grad|| = 99.2422
+Objective = 4.4754e+06 ||grad|| = 97.4029
+Objective = 4.12876e+06 ||grad|| = 95.7771
+Objective = 3.79767e+06 ||grad|| = 93.7901
+Objective = 3.48024e+06 ||grad|| = 92.6616
+Objective = 3.17828e+06 ||grad|| = 91.0411
+Objective = 2.89222e+06 ||grad|| = 90.2048
+Objective = 2.62452e+06 ||grad|| = 89.3309
+Objective = 2.37241e+06 ||grad|| = 89.81
+Objective = 2.14139e+06 ||grad|| = 89.5385
+Objective = 1.92949e+06 ||grad|| = 90.927
+Objective = 1.74234e+06 ||grad|| = 90.8865
+Objective = 1.58323e+06 ||grad|| = 93.6358
+Objective = 1.45039e+06 ||grad|| = 94.2278
+Objective = 1.34143e+06 ||grad|| = 97.5835
+Objective = 1.24976e+06 ||grad|| = 98.3271
+Objective = 1.18957e+06 ||grad|| = 102.916
+Objective = 1.15619e+06 ||grad|| = 103.303
+Objective = 1.13233e+06 ||grad|| = 108.207
+Objective = 1.05893e+06 ||grad|| = 99.8453
+Objective = 1.00818e+06 ||grad|| = 71.4256
+Objective = 966117 ||grad|| = 62.5639
+Objective = 927372 ||grad|| = 57.9943
+Objective = 894374 ||grad|| = 49.7394
+Objective = 866185 ||grad|| = 47.9252
+Objective = 844565 ||grad|| = 42.9419
+Objective = 831380 ||grad|| = 36.4108
+Objective = 824990 ||grad|| = 37.2362
+Objective = 818808 ||grad|| = 34.6058
+Objective = 811184 ||grad|| = 37.7192
+Objective = 803317 ||grad|| = 42.3438
+Objective = 796525 ||grad|| = 36.3825
+Objective = 793076 ||grad|| = 41.2408
+Objective = 790823 ||grad|| = 37.2027
+Objective = 789547 ||grad|| = 45.7352
+Objective = 783923 ||grad|| = 42.6908
+Objective = 780451 ||grad|| = 23.7457
+Objective = 777971 ||grad|| = 20.1361
+Objective = 775506 ||grad|| = 19.7387
+Objective = 773920 ||grad|| = 11.2757
+Objective = 772704 ||grad|| = 13.6048
+Objective = 771628 ||grad|| = 15.0499
+Objective = 771285 ||grad|| = 13.6226
+Objective = 770542 ||grad|| = 6.44974
+Objective = 769705 ||grad|| = 10.6325
+Objective = 769038 ||grad|| = 9.16791
+Objective = 768345 ||grad|| = 8.72893
+Objective = 767786 ||grad|| = 7.69334
+Objective = 767691 ||grad|| = 10.0541
+Objective = 767684 ||grad|| = 20.0325
+Objective = 766794 ||grad|| = 19.5459
+Objective = 766682 ||grad|| = 21.631
+Objective = 766539 ||grad|| = 22.2472
+!
+Objective = 766539 ||grad|| = 25.4096
+Objective = 766271 ||grad|| = 25.4096
+!
+Objective = 766271 ||grad|| = 25.7988
+Objective = 766191 ||grad|| = 25.7988
+!
+Objective = 766191 ||grad|| = 26.7683
+Objective = 765975 ||grad|| = 26.7683
+!
+Objective = 765975 ||grad|| = 26.4671
+Objective = 765929 ||grad|| = 26.4671
+!
+Objective = 765929 ||grad|| = 27.1892
+Objective = 765753 ||grad|| = 27.1892
+!
+Objective = 765753 ||grad|| = 26.7928
+Objective = 765730 ||grad|| = 26.7928
+!
+Objective = 765730 ||grad|| = 27.4268
+Objective = 765576 ||grad|| = 27.4268
+!
+Objective = 765576 ||grad|| = 26.9863
+Objective = 765564 ||grad|| = 26.9863
+!
+Objective = 765564 ||grad|| = 27.56
+Objective = 765425 ||grad|| = 27.56
+!
+Objective = 765425 ||grad|| = 27.1012
+Objective = 765419 ||grad|| = 27.1012
+!
+Objective = 765419 ||grad|| = 27.6358
+--------- epoch = 1---------
+Objective = 2.1591e+08 ||grad|| = 4554.36
+Objective = 1.69091e+08 ||grad|| = 9892.34
+Objective = 1.15873e+08 ||grad|| = 13331.6
+Objective = 8.45101e+07 ||grad|| = 10172.8
+Objective = 7.55017e+07 ||grad|| = 3773.74
+Objective = 6.73682e+07 ||grad|| = 2925.53
+Objective = 5.80146e+07 ||grad|| = 2407.24
+Objective = 4.93216e+07 ||grad|| = 2332.93
+Objective = 4.23228e+07 ||grad|| = 1986.56
+Objective = 3.54855e+07 ||grad|| = 1721.92
+Objective = 3.01352e+07 ||grad|| = 1659.37
+Objective = 2.61371e+07 ||grad|| = 1107.53
+Objective = 2.21145e+07 ||grad|| = 998.986
+Objective = 1.90303e+07 ||grad|| = 855.228
+Objective = 1.65648e+07 ||grad|| = 670.665
+Objective = 1.48611e+07 ||grad|| = 512.812
+Objective = 1.36558e+07 ||grad|| = 352.635
+Objective = 1.26588e+07 ||grad|| = 290.108
+Objective = 1.17602e+07 ||grad|| = 255.4
+Objective = 1.09637e+07 ||grad|| = 235.952
+Objective = 1.02722e+07 ||grad|| = 209.667
+Objective = 9.66556e+06 ||grad|| = 191.533
+Objective = 9.15746e+06 ||grad|| = 169.896
+Objective = 8.73774e+06 ||grad|| = 148.527
+Objective = 8.36428e+06 ||grad|| = 136.289
+Objective = 8.01864e+06 ||grad|| = 127.046
+Objective = 7.72666e+06 ||grad|| = 119.022
+Objective = 7.4734e+06 ||grad|| = 110.001
+Objective = 7.24945e+06 ||grad|| = 104.699
+Objective = 7.0429e+06 ||grad|| = 101.939
+Objective = 6.84805e+06 ||grad|| = 100.289
+Objective = 6.67969e+06 ||grad|| = 96.2235
+Objective = 6.5273e+06 ||grad|| = 93.8198
+Objective = 6.38287e+06 ||grad|| = 92.5786
+Objective = 6.25154e+06 ||grad|| = 90.7546
+Objective = 6.12903e+06 ||grad|| = 88.9214
+Objective = 6.01332e+06 ||grad|| = 88.6701
+Objective = 5.89886e+06 ||grad|| = 87.7641
+Objective = 5.79558e+06 ||grad|| = 87.0161
+Objective = 5.70372e+06 ||grad|| = 86.2953
+Objective = 5.61932e+06 ||grad|| = 86.4869
+Objective = 5.53685e+06 ||grad|| = 86.3099
+Objective = 5.46122e+06 ||grad|| = 86.0477
+Objective = 5.39032e+06 ||grad|| = 86.4968
+Objective = 5.32135e+06 ||grad|| = 86.3224
+Objective = 5.25731e+06 ||grad|| = 86.5541
+Objective = 5.19915e+06 ||grad|| = 86.1919
+Objective = 5.13958e+06 ||grad|| = 86.8767
+Objective = 5.08009e+06 ||grad|| = 86.535
+Objective = 5.02833e+06 ||grad|| = 87.0238
+Objective = 4.99234e+06 ||grad|| = 87.7043
+Objective = 4.99167e+06 ||grad|| = 79.3082
+Objective = 4.99061e+06 ||grad|| = 96.1756
+Objective = 4.93374e+06 ||grad|| = 94.0102
+Objective = 4.93371e+06 ||grad|| = 93.0493
+Objective = 4.92299e+06 ||grad|| = 92.9776
+!
+Objective = 4.92299e+06 ||grad|| = 97.1611
+Objective = 4.89629e+06 ||grad|| = 97.1611
+!
+Objective = 4.89629e+06 ||grad|| = 96.3676
+Objective = 4.88328e+06 ||grad|| = 96.3676
+!
+Objective = 4.88328e+06 ||grad|| = 98.5625
+Objective = 4.8656e+06 ||grad|| = 98.5625
+!
+Objective = 4.8656e+06 ||grad|| = 98.4395
+Objective = 4.85269e+06 ||grad|| = 98.4395
+!
+Objective = 4.85269e+06 ||grad|| = 99.4725
+Objective = 4.83963e+06 ||grad|| = 99.4725
+!
+Objective = 4.83963e+06 ||grad|| = 99.1999
+Objective = 4.82947e+06 ||grad|| = 99.1999
+!
+Objective = 4.82947e+06 ||grad|| = 100.66
+Objective = 4.81664e+06 ||grad|| = 100.66
+--------- epoch = 2---------
+Objective = 5.40976e+06 ||grad|| = 121.974
+!
+Objective = 5.40976e+06 ||grad|| = 110.715
+Objective = 5.32043e+06 ||grad|| = 110.715
+Objective = 5.26093e+06 ||grad|| = 82.1213
+Objective = 5.23267e+06 ||grad|| = 54.8588
+Objective = 5.21826e+06 ||grad|| = 47.8377
+Objective = 5.20705e+06 ||grad|| = 52.6197
+Objective = 5.19254e+06 ||grad|| = 54.5168
+Objective = 5.18392e+06 ||grad|| = 45.2862
+Objective = 5.1758e+06 ||grad|| = 45.2346
+Objective = 5.16745e+06 ||grad|| = 43.1069
+Objective = 5.16064e+06 ||grad|| = 44.4016
+Objective = 5.15187e+06 ||grad|| = 44.3014
+Objective = 5.14627e+06 ||grad|| = 44.6175
+Objective = 5.13733e+06 ||grad|| = 44.4954
+Objective = 5.13298e+06 ||grad|| = 45.2459
+Objective = 5.12358e+06 ||grad|| = 46.852
+Objective = 5.11823e+06 ||grad|| = 45.3856
+Objective = 5.10779e+06 ||grad|| = 46.8879
+Objective = 5.10256e+06 ||grad|| = 43.572
+Objective = 5.09296e+06 ||grad|| = 47.2661
+Objective = 5.08546e+06 ||grad|| = 42.6549
+Objective = 5.0792e+06 ||grad|| = 42.1952
+Objective = 5.07208e+06 ||grad|| = 41.671
+Objective = 5.06561e+06 ||grad|| = 40.5895
+Objective = 5.05902e+06 ||grad|| = 41.9333
+Objective = 5.05166e+06 ||grad|| = 40.4681
+Objective = 5.04706e+06 ||grad|| = 41.3004
+Objective = 5.03914e+06 ||grad|| = 42.631
+Objective = 5.03641e+06 ||grad|| = 43.3388
+Objective = 5.02757e+06 ||grad|| = 46.5538
+Objective = 5.02634e+06 ||grad|| = 42.8782
+Objective = 5.01854e+06 ||grad|| = 47.1703
+Objective = 5.01532e+06 ||grad|| = 42.4988
+Objective = 5.01133e+06 ||grad|| = 45.8524
+Objective = 5.00459e+06 ||grad|| = 44.4301
+Objective = 5.00237e+06 ||grad|| = 43.1376
+Objective = 4.99602e+06 ||grad|| = 45.1148
+Objective = 4.99242e+06 ||grad|| = 43.0073
+Objective = 4.98886e+06 ||grad|| = 43.3302
+Objective = 4.98395e+06 ||grad|| = 44.6508
+Objective = 4.98008e+06 ||grad|| = 42.5893
+Objective = 4.97671e+06 ||grad|| = 43.7646
+Objective = 4.9725e+06 ||grad|| = 42.6629
+Objective = 4.97196e+06 ||grad|| = 43.8546
+Objective = 4.96627e+06 ||grad|| = 45.0579
+Objective = 4.96461e+06 ||grad|| = 44.0455
+Objective = 4.95833e+06 ||grad|| = 45.7044
+Objective = 4.95694e+06 ||grad|| = 43.4475
+Objective = 4.95435e+06 ||grad|| = 45.3935
+Objective = 4.95068e+06 ||grad|| = 44.8775
+Objective = 4.94818e+06 ||grad|| = 44.5684
+Objective = 4.94429e+06 ||grad|| = 44.5437
+Objective = 4.94095e+06 ||grad|| = 44.3832
+Objective = 4.93798e+06 ||grad|| = 44.4332
+Objective = 4.93448e+06 ||grad|| = 43.9169
+Objective = 4.93142e+06 ||grad|| = 44.0914
+Objective = 4.92638e+06 ||grad|| = 44.3726
+Objective = 4.92288e+06 ||grad|| = 43.0337
+Objective = 4.91996e+06 ||grad|| = 42.8703
+Objective = 4.91779e+06 ||grad|| = 43.524
+Objective = 4.9145e+06 ||grad|| = 43.3214
+Objective = 4.91162e+06 ||grad|| = 43.3808
+Objective = 4.90779e+06 ||grad|| = 43.6519
+Objective = 4.90493e+06 ||grad|| = 43.6219
+Objective = 4.9007e+06 ||grad|| = 43.0513
+Objective = 4.89882e+06 ||grad|| = 42.801
+Objective = 4.89372e+06 ||grad|| = 43.9629
+Objective = 4.89102e+06 ||grad|| = 42.9539
+Objective = 4.88785e+06 ||grad|| = 43.3571
+Objective: 4.88785e+06
+Current best HPWL: 1.21902e+07
+--------- epoch = 0---------
+Objective = 1.84497e+07 ||grad|| = 155.077
+Objective = 1.77503e+07 ||grad|| = 151.561
+Objective = 1.70707e+07 ||grad|| = 148.434
+Objective = 1.64086e+07 ||grad|| = 145.459
+Objective = 1.57622e+07 ||grad|| = 142.755
+Objective = 1.51301e+07 ||grad|| = 140.063
+Objective = 1.45134e+07 ||grad|| = 137.589
+Objective = 1.391e+07 ||grad|| = 135.199
+Objective = 1.33205e+07 ||grad|| = 132.886
+Objective = 1.27439e+07 ||grad|| = 130.846
+Objective = 1.21807e+07 ||grad|| = 128.79
+Objective = 1.16301e+07 ||grad|| = 126.509
+Objective = 1.10918e+07 ||grad|| = 124.631
+Objective = 1.05642e+07 ||grad|| = 122.7
+Objective = 1.00485e+07 ||grad|| = 120.782
+Objective = 9.5447e+06 ||grad|| = 118.953
+Objective = 9.05237e+06 ||grad|| = 116.981
+Objective = 8.572e+06 ||grad|| = 115.206
+Objective = 8.10289e+06 ||grad|| = 113.575
+Objective = 7.64514e+06 ||grad|| = 111.582
+Objective = 7.20014e+06 ||grad|| = 109.997
+Objective = 6.76485e+06 ||grad|| = 108.337
+Objective = 6.34349e+06 ||grad|| = 106.167
+Objective = 5.93381e+06 ||grad|| = 104.662
+Objective = 5.53621e+06 ||grad|| = 102.7
+Objective = 5.15232e+06 ||grad|| = 100.901
+Objective = 4.78015e+06 ||grad|| = 99.3408
+Objective = 4.42234e+06 ||grad|| = 97.198
+Objective = 4.07866e+06 ||grad|| = 95.7733
+Objective = 3.75019e+06 ||grad|| = 93.9631
+Objective = 3.4382e+06 ||grad|| = 92.3029
+Objective = 3.14008e+06 ||grad|| = 91.7385
+Objective = 2.86012e+06 ||grad|| = 90.1303
+Objective = 2.59676e+06 ||grad|| = 89.8297
+Objective = 2.35213e+06 ||grad|| = 89.5065
+Objective = 2.12471e+06 ||grad|| = 90.2258
+Objective = 1.91599e+06 ||grad|| = 90.5925
+Objective = 1.72965e+06 ||grad|| = 91.4372
+Objective = 1.56893e+06 ||grad|| = 92.1954
+Objective = 1.43441e+06 ||grad|| = 94.1298
+Objective = 1.32227e+06 ||grad|| = 96.4882
+Objective = 1.23746e+06 ||grad|| = 98.0972
+Objective = 1.18627e+06 ||grad|| = 101.161
+Objective = 1.16733e+06 ||grad|| = 102.848
+Objective = 1.14188e+06 ||grad|| = 106.055
+Objective = 1.07131e+06 ||grad|| = 96.1541
+Objective = 1.02041e+06 ||grad|| = 70.2995
+Objective = 977843 ||grad|| = 62.1969
+Objective = 938162 ||grad|| = 58.2061
+Objective = 904137 ||grad|| = 49.7107
+Objective = 874591 ||grad|| = 48.2452
+Objective = 850950 ||grad|| = 43.9548
+Objective = 835595 ||grad|| = 36.3599
+Objective = 827567 ||grad|| = 37.2957
+Objective = 821585 ||grad|| = 33.9191
+Objective = 814253 ||grad|| = 36.1808
+Objective = 806340 ||grad|| = 41.5114
+Objective = 798698 ||grad|| = 37.1388
+Objective = 793962 ||grad|| = 39.4437
+Objective = 791352 ||grad|| = 36.6654
+Objective = 790303 ||grad|| = 39.7659
+Objective = 789881 ||grad|| = 36.7616
+Objective = 789111 ||grad|| = 48.7378
+Objective = 782923 ||grad|| = 46.2536
+Objective = 779423 ||grad|| = 24.6889
+Objective = 776930 ||grad|| = 20.1798
+Objective = 776875 ||grad|| = 20.0097
+!
+Objective = 776875 ||grad|| = 43.5704
+Objective = 771563 ||grad|| = 43.5704
+Objective = 770422 ||grad|| = 18.5785
+Objective = 769504 ||grad|| = 21.2309
+Objective = 769299 ||grad|| = 18.003
+!
+Objective = 769299 ||grad|| = 22.92
+Objective = 769269 ||grad|| = 22.92
+!
+Objective = 769269 ||grad|| = 26.2532
+Objective = 769005 ||grad|| = 26.2532
+!
+Objective = 769005 ||grad|| = 26.1791
+Objective = 768968 ||grad|| = 26.1791
+!
+Objective = 768968 ||grad|| = 27.3295
+Objective = 768733 ||grad|| = 27.3295
+!
+Objective = 768733 ||grad|| = 26.7045
+Objective = 768708 ||grad|| = 26.7045
+!
+Objective = 768708 ||grad|| = 27.6395
+Objective = 768499 ||grad|| = 27.6395
+!
+Objective = 768499 ||grad|| = 26.9518
+Objective = 768483 ||grad|| = 26.9518
+!
+Objective = 768483 ||grad|| = 27.7824
+Objective = 768293 ||grad|| = 27.7824
+!
+Objective = 768293 ||grad|| = 27.0987
+Objective = 768283 ||grad|| = 27.0987
+!
+Objective = 768283 ||grad|| = 27.856
+Objective = 768108 ||grad|| = 27.856
+!
+Objective = 768108 ||grad|| = 27.193
+Objective = 768102 ||grad|| = 27.193
+!
+Objective = 768102 ||grad|| = 27.8937
+Objective = 767939 ||grad|| = 27.8937
+!
+Objective = 767939 ||grad|| = 27.2538
+Objective = 767936 ||grad|| = 27.2538
+!
+Objective = 767936 ||grad|| = 27.909
+Objective = 767781 ||grad|| = 27.909
+--------- epoch = 1---------
+Objective = 2.15772e+08 ||grad|| = 4480.96
+Objective = 1.7111e+08 ||grad|| = 9570.35
+Objective = 1.22671e+08 ||grad|| = 12918.3
+Objective = 9.51822e+07 ||grad|| = 8311.81
+Objective = 7.58362e+07 ||grad|| = 5747.34
+Objective = 6.43274e+07 ||grad|| = 3340.85
+Objective = 5.598e+07 ||grad|| = 2190.68
+Objective = 4.78227e+07 ||grad|| = 1860.92
+Objective = 3.90919e+07 ||grad|| = 2154.9
+Objective = 3.13181e+07 ||grad|| = 2024.27
+Objective = 2.61321e+07 ||grad|| = 1516.69
+Objective = 2.25075e+07 ||grad|| = 1091.58
+Objective = 1.96283e+07 ||grad|| = 762.047
+Objective = 1.73677e+07 ||grad|| = 670.035
+Objective = 1.56291e+07 ||grad|| = 551.977
+Objective = 1.42846e+07 ||grad|| = 385.794
+Objective = 1.30522e+07 ||grad|| = 336.879
+Objective = 1.1824e+07 ||grad|| = 332.647
+Objective = 1.07707e+07 ||grad|| = 310.107
+Objective = 9.94197e+06 ||grad|| = 235.079
+Objective = 9.28101e+06 ||grad|| = 203.304
+Objective = 8.76916e+06 ||grad|| = 173.742
+Objective = 8.33944e+06 ||grad|| = 150.455
+Objective = 7.94785e+06 ||grad|| = 138.109
+Objective = 7.60296e+06 ||grad|| = 128.222
+Objective = 7.28032e+06 ||grad|| = 122.32
+Objective = 6.99106e+06 ||grad|| = 116.094
+Objective = 6.74688e+06 ||grad|| = 107.236
+Objective = 6.54297e+06 ||grad|| = 101.346
+Objective = 6.35826e+06 ||grad|| = 96.8979
+Objective = 6.18502e+06 ||grad|| = 95.5503
+Objective = 6.01846e+06 ||grad|| = 95.3586
+Objective = 5.86831e+06 ||grad|| = 91.9127
+Objective = 5.73237e+06 ||grad|| = 90.9154
+Objective = 5.60265e+06 ||grad|| = 89.1285
+Objective = 5.48035e+06 ||grad|| = 87.9789
+Objective = 5.36291e+06 ||grad|| = 88.0833
+Objective = 5.2544e+06 ||grad|| = 88.4373
+Objective = 5.15367e+06 ||grad|| = 86.6577
+Objective = 5.05871e+06 ||grad|| = 86.7491
+Objective = 4.96601e+06 ||grad|| = 87.3811
+Objective = 4.87817e+06 ||grad|| = 87.4105
+Objective = 4.79743e+06 ||grad|| = 87.5146
+Objective = 4.71895e+06 ||grad|| = 88.0796
+Objective = 4.64275e+06 ||grad|| = 88.8973
+Objective = 4.57511e+06 ||grad|| = 88.695
+Objective = 4.51244e+06 ||grad|| = 89.1828
+Objective = 4.45181e+06 ||grad|| = 89.234
+Objective = 4.39866e+06 ||grad|| = 89.5059
+Objective = 4.34951e+06 ||grad|| = 90.3787
+Objective = 4.30229e+06 ||grad|| = 90.7452
+Objective = 4.25906e+06 ||grad|| = 92.1051
+Objective = 4.2178e+06 ||grad|| = 92.0598
+Objective = 4.175e+06 ||grad|| = 92.8361
+Objective = 4.13071e+06 ||grad|| = 93.2618
+Objective = 4.0945e+06 ||grad|| = 93.1029
+Objective = 4.05874e+06 ||grad|| = 93.9094
+Objective = 4.02268e+06 ||grad|| = 94.3201
+Objective = 3.98876e+06 ||grad|| = 94.7636
+Objective = 3.95539e+06 ||grad|| = 95.4938
+Objective = 3.92863e+06 ||grad|| = 95.4984
+Objective = 3.89973e+06 ||grad|| = 96.553
+Objective = 3.87256e+06 ||grad|| = 96.0137
+Objective = 3.85003e+06 ||grad|| = 96.2567
+Objective = 3.82792e+06 ||grad|| = 97.4263
+Objective = 3.8059e+06 ||grad|| = 97.7111
+Objective = 3.79107e+06 ||grad|| = 97.6187
+Objective = 3.77605e+06 ||grad|| = 98.7439
+Objective = 3.7638e+06 ||grad|| = 98.8113
+Objective = 3.74905e+06 ||grad|| = 99.7061
+--------- epoch = 2---------
+Objective = 3.9807e+06 ||grad|| = 129.675
+Objective = 3.94222e+06 ||grad|| = 96.9287
+Objective = 3.87727e+06 ||grad|| = 87.5949
+Objective = 3.83799e+06 ||grad|| = 60.7064
+Objective = 3.80965e+06 ||grad|| = 49.8269
+Objective = 3.78652e+06 ||grad|| = 44.5134
+Objective = 3.76829e+06 ||grad|| = 39.8281
+Objective = 3.7528e+06 ||grad|| = 39.334
+Objective = 3.74021e+06 ||grad|| = 36.3488
+Objective = 3.73106e+06 ||grad|| = 37.7859
+Objective = 3.7224e+06 ||grad|| = 37.6117
+Objective = 3.71749e+06 ||grad|| = 39.2096
+Objective = 3.7106e+06 ||grad|| = 40.4572
+Objective = 3.70762e+06 ||grad|| = 41.5496
+Objective = 3.7001e+06 ||grad|| = 43.156
+Objective = 3.69697e+06 ||grad|| = 41.1465
+Objective = 3.69143e+06 ||grad|| = 42.8801
+Objective = 3.6878e+06 ||grad|| = 41.5589
+Objective = 3.68354e+06 ||grad|| = 42.8588
+Objective = 3.68005e+06 ||grad|| = 41.9392
+Objective = 3.67768e+06 ||grad|| = 42.4546
+Objective = 3.67319e+06 ||grad|| = 43.3123
+Objective = 3.67044e+06 ||grad|| = 42.4168
+Objective = 3.66766e+06 ||grad|| = 42.4849
+Objective = 3.66564e+06 ||grad|| = 42.6936
+Objective = 3.66233e+06 ||grad|| = 42.9271
+Objective = 3.66076e+06 ||grad|| = 42.5986
+Objective = 3.65847e+06 ||grad|| = 43.2003
+Objective = 3.6564e+06 ||grad|| = 43.5222
+Objective = 3.65399e+06 ||grad|| = 43.5007
+Objective = 3.65169e+06 ||grad|| = 43.9191
+Objective = 3.64919e+06 ||grad|| = 43.2209
+Objective = 3.64786e+06 ||grad|| = 43.6485
+Objective = 3.64542e+06 ||grad|| = 43.908
+Objective = 3.64493e+06 ||grad|| = 44.5482
+Objective = 3.64202e+06 ||grad|| = 45.0366
+Objective = 3.63946e+06 ||grad|| = 45.6974
+Objective = 3.6332e+06 ||grad|| = 41.3261
+Objective = 3.62927e+06 ||grad|| = 26.6869
+Objective = 3.62678e+06 ||grad|| = 17.5683
+Objective = 3.62493e+06 ||grad|| = 15.005
+Objective = 3.62315e+06 ||grad|| = 14.056
+Objective = 3.62191e+06 ||grad|| = 9.93165
+Objective = 3.62063e+06 ||grad|| = 11.3652
+Objective = 3.61967e+06 ||grad|| = 8.45608
+Objective = 3.61938e+06 ||grad|| = 10.26
+!
+Objective = 3.61938e+06 ||grad|| = 23.4863
+Objective = 3.6169e+06 ||grad|| = 23.4863
+Objective = 3.61588e+06 ||grad|| = 14.1751
+Objective = 3.61512e+06 ||grad|| = 12.8643
+Objective = 3.61452e+06 ||grad|| = 11.721
+Objective = 3.61407e+06 ||grad|| = 12.5538
+Objective = 3.61388e+06 ||grad|| = 11.9178
+!
+Objective = 3.61388e+06 ||grad|| = 15.7649
+Objective = 3.61337e+06 ||grad|| = 15.7649
+Objective = 3.61306e+06 ||grad|| = 10.9206
+Objective = 3.61289e+06 ||grad|| = 5.8848
+Objective = 3.61245e+06 ||grad|| = 4.47701
+Objective = 3.61199e+06 ||grad|| = 9.24762
+Objective = 3.61182e+06 ||grad|| = 7.33924
+Objective = 3.61179e+06 ||grad|| = 11.2671
+Objective = 3.61131e+06 ||grad|| = 11.3072
+Objective = 3.61122e+06 ||grad|| = 11.8166
+Objective = 3.61086e+06 ||grad|| = 11.5393
+Objective = 3.61064e+06 ||grad|| = 7.50121
+Objective = 3.61049e+06 ||grad|| = 4.95492
+Objective = 3.61038e+06 ||grad|| = 3.96349
+Objective = 3.61014e+06 ||grad|| = 4.02742
+Objective = 3.60993e+06 ||grad|| = 10.2079
+Objective = 3.60966e+06 ||grad|| = 11.4841
+Objective: 3.60966e+06
+Current best HPWL: 1.06649e+07
+--------- epoch = 0---------
+Objective = 1.85615e+07 ||grad|| = 155.29
+Objective = 1.78629e+07 ||grad|| = 151.629
+Objective = 1.71835e+07 ||grad|| = 148.444
+Objective = 1.65209e+07 ||grad|| = 145.586
+Objective = 1.58742e+07 ||grad|| = 142.721
+Objective = 1.52427e+07 ||grad|| = 140.092
+Objective = 1.46257e+07 ||grad|| = 137.639
+Objective = 1.40214e+07 ||grad|| = 135.345
+Objective = 1.34303e+07 ||grad|| = 132.964
+Objective = 1.28519e+07 ||grad|| = 130.928
+Objective = 1.22859e+07 ||grad|| = 128.874
+Objective = 1.17324e+07 ||grad|| = 126.829
+Objective = 1.11916e+07 ||grad|| = 125.001
+Objective = 1.06619e+07 ||grad|| = 123.116
+Objective = 1.01448e+07 ||grad|| = 121.054
+Objective = 9.63876e+06 ||grad|| = 119.167
+Objective = 9.14472e+06 ||grad|| = 117.498
+Objective = 8.6621e+06 ||grad|| = 115.621
+Objective = 8.19123e+06 ||grad|| = 113.717
+Objective = 7.73083e+06 ||grad|| = 112.172
+Objective = 7.28133e+06 ||grad|| = 110.333
+Objective = 6.84476e+06 ||grad|| = 108.347
+Objective = 6.41932e+06 ||grad|| = 107.02
+Objective = 6.00602e+06 ||grad|| = 104.902
+Objective = 5.6053e+06 ||grad|| = 103.115
+Objective = 5.21632e+06 ||grad|| = 101.419
+Objective = 4.84151e+06 ||grad|| = 99.3716
+Objective = 4.47872e+06 ||grad|| = 98.053
+Objective = 4.13051e+06 ||grad|| = 95.9679
+Objective = 3.79792e+06 ||grad|| = 94.2283
+Objective = 3.48125e+06 ||grad|| = 92.8777
+Objective = 3.18005e+06 ||grad|| = 91.4098
+Objective = 2.89708e+06 ||grad|| = 90.4394
+Objective = 2.63147e+06 ||grad|| = 90.2866
+Objective = 2.38384e+06 ||grad|| = 89.5271
+Objective = 2.15325e+06 ||grad|| = 90.5955
+Objective = 1.94093e+06 ||grad|| = 90.5352
+Objective = 1.75209e+06 ||grad|| = 91.5281
+Objective = 1.58949e+06 ||grad|| = 92.587
+Objective = 1.45206e+06 ||grad|| = 94.1104
+Objective = 1.33632e+06 ||grad|| = 95.7358
+Objective = 1.24671e+06 ||grad|| = 97.7641
+Objective = 1.184e+06 ||grad|| = 101.333
+Objective = 1.15766e+06 ||grad|| = 102.813
+Objective = 1.13271e+06 ||grad|| = 106.92
+Objective = 1.06164e+06 ||grad|| = 97.4753
+Objective = 1.01109e+06 ||grad|| = 70.537
+Objective = 968783 ||grad|| = 62.2301
+Objective = 929892 ||grad|| = 57.8375
+Objective = 896748 ||grad|| = 49.5107
+Objective = 868287 ||grad|| = 47.6546
+Objective = 846014 ||grad|| = 43.2826
+Objective = 832385 ||grad|| = 36.2033
+Objective = 825899 ||grad|| = 37.3659
+Objective = 819322 ||grad|| = 34.841
+Objective = 811449 ||grad|| = 37.9004
+Objective = 803264 ||grad|| = 43.4403
+Objective = 796236 ||grad|| = 36.0074
+Objective = 793227 ||grad|| = 45.0979
+Objective = 788607 ||grad|| = 40.6537
+Objective = 784106 ||grad|| = 30.1433
+Objective = 781130 ||grad|| = 21.5388
+Objective = 778783 ||grad|| = 19.8323
+Objective = 776687 ||grad|| = 16.8262
+Objective = 775294 ||grad|| = 10.6593
+Objective = 773811 ||grad|| = 14.6474
+Objective = 772623 ||grad|| = 9.87588
+Objective = 771691 ||grad|| = 8.61859
+Objective = 771129 ||grad|| = 10.5364
+!
+Objective = 771129 ||grad|| = 22.0621
+Objective = 770436 ||grad|| = 22.0621
+Objective = 770430 ||grad|| = 24.8541
+Objective = 769995 ||grad|| = 25.1316
+!
+Objective = 769995 ||grad|| = 26.2213
+Objective = 769694 ||grad|| = 26.2213
+!
+Objective = 769694 ||grad|| = 26.7746
+Objective = 769408 ||grad|| = 26.7746
+!
+Objective = 769408 ||grad|| = 26.8529
+Objective = 769205 ||grad|| = 26.8529
+!
+Objective = 769205 ||grad|| = 27.1677
+Objective = 768991 ||grad|| = 27.1677
+!
+Objective = 768991 ||grad|| = 27.1307
+Objective = 768835 ||grad|| = 27.1307
+!
+Objective = 768835 ||grad|| = 27.3526
+Objective = 768660 ||grad|| = 27.3526
+!
+Objective = 768660 ||grad|| = 27.2752
+Objective = 768533 ||grad|| = 27.2752
+!
+Objective = 768533 ||grad|| = 27.455
+Objective = 768383 ||grad|| = 27.455
+!
+Objective = 768383 ||grad|| = 27.3688
+Objective = 768273 ||grad|| = 27.3688
+!
+Objective = 768273 ||grad|| = 27.5284
+Objective = 768138 ||grad|| = 27.5284
+!
+Objective = 768138 ||grad|| = 27.4419
+Objective = 768039 ||grad|| = 27.4419
+!
+Objective = 768039 ||grad|| = 27.5852
+Objective = 767915 ||grad|| = 27.5852
+!
+Objective = 767915 ||grad|| = 27.4986
+Objective = 767823 ||grad|| = 27.4986
+!
+Objective = 767823 ||grad|| = 27.6295
+--------- epoch = 1---------
+Objective = 1.9604e+08 ||grad|| = 6494.08
+Objective = 1.44568e+08 ||grad|| = 11917.4
+Objective = 1.06019e+08 ||grad|| = 10204
+Objective = 8.31822e+07 ||grad|| = 7187.55
+Objective = 7.25385e+07 ||grad|| = 2952.11
+Objective = 6.36818e+07 ||grad|| = 2525.45
+Objective = 5.72815e+07 ||grad|| = 2181.87
+Objective = 4.97368e+07 ||grad|| = 1666.79
+Objective = 4.21511e+07 ||grad|| = 1865.82
+Objective = 3.44315e+07 ||grad|| = 2022.38
+Objective = 2.90589e+07 ||grad|| = 1766.41
+Objective = 2.51096e+07 ||grad|| = 1134.7
+Objective = 2.16683e+07 ||grad|| = 933.539
+Objective = 1.87603e+07 ||grad|| = 752.936
+Objective = 1.66874e+07 ||grad|| = 616.792
+Objective = 1.49731e+07 ||grad|| = 450.41
+Objective = 1.36286e+07 ||grad|| = 404.765
+Objective = 1.25364e+07 ||grad|| = 321.436
+Objective = 1.16702e+07 ||grad|| = 269.881
+Objective = 1.09386e+07 ||grad|| = 221.948
+Objective = 1.02434e+07 ||grad|| = 209.703
+Objective = 9.63748e+06 ||grad|| = 191.528
+Objective = 9.16335e+06 ||grad|| = 157.49
+Objective = 8.71356e+06 ||grad|| = 153.086
+Objective = 8.31533e+06 ||grad|| = 142.899
+Objective = 7.96623e+06 ||grad|| = 131.66
+Objective = 7.65981e+06 ||grad|| = 121.943
+Objective = 7.39383e+06 ||grad|| = 113.938
+Objective = 7.16333e+06 ||grad|| = 107.474
+Objective = 6.95378e+06 ||grad|| = 103.231
+Objective = 6.76424e+06 ||grad|| = 98.8583
+Objective = 6.60167e+06 ||grad|| = 96.0012
+Objective = 6.45375e+06 ||grad|| = 93.5642
+Objective = 6.30954e+06 ||grad|| = 93.2288
+Objective = 6.17445e+06 ||grad|| = 91.5994
+Objective = 6.05119e+06 ||grad|| = 90.8685
+Objective = 5.93259e+06 ||grad|| = 89.3387
+Objective = 5.82094e+06 ||grad|| = 89.0935
+Objective = 5.70811e+06 ||grad|| = 88.6611
+Objective = 5.60418e+06 ||grad|| = 87.6467
+Objective = 5.50955e+06 ||grad|| = 88.0023
+Objective = 5.42094e+06 ||grad|| = 88.073
+Objective = 5.33476e+06 ||grad|| = 88.6065
+Objective = 5.25199e+06 ||grad|| = 87.734
+Objective = 5.17892e+06 ||grad|| = 88.7121
+Objective = 5.10736e+06 ||grad|| = 89.4456
+Objective = 5.04083e+06 ||grad|| = 89.0608
+Objective = 4.98033e+06 ||grad|| = 89.4733
+Objective = 4.92246e+06 ||grad|| = 90.3472
+Objective = 4.86806e+06 ||grad|| = 90.2571
+Objective = 4.82473e+06 ||grad|| = 90.6748
+Objective = 4.78081e+06 ||grad|| = 91.4373
+Objective = 4.74237e+06 ||grad|| = 91.8874
+Objective = 4.72754e+06 ||grad|| = 83.1758
+Objective = 4.72343e+06 ||grad|| = 97.3675
+Objective = 4.67682e+06 ||grad|| = 94.8668
+!
+Objective = 4.67682e+06 ||grad|| = 96.4922
+Objective = 4.66375e+06 ||grad|| = 96.4922
+!
+Objective = 4.66375e+06 ||grad|| = 99.6617
+Objective = 4.64214e+06 ||grad|| = 99.6617
+!
+Objective = 4.64214e+06 ||grad|| = 99.7954
+Objective = 4.62877e+06 ||grad|| = 99.7954
+!
+Objective = 4.62877e+06 ||grad|| = 101.508
+Objective = 4.61364e+06 ||grad|| = 101.508
+!
+Objective = 4.61364e+06 ||grad|| = 101.51
+Objective = 4.60318e+06 ||grad|| = 101.51
+!
+Objective = 4.60318e+06 ||grad|| = 102.887
+Objective = 4.59134e+06 ||grad|| = 102.887
+!
+Objective = 4.59134e+06 ||grad|| = 102.259
+Objective = 4.58418e+06 ||grad|| = 102.259
+--------- epoch = 2---------
+Objective = 5.16064e+06 ||grad|| = 123.711
+!
+Objective = 5.16064e+06 ||grad|| = 110.762
+Objective = 5.07158e+06 ||grad|| = 110.762
+Objective = 5.0131e+06 ||grad|| = 81.8218
+Objective = 4.98556e+06 ||grad|| = 54.5275
+Objective = 4.97152e+06 ||grad|| = 48.0794
+Objective = 4.96012e+06 ||grad|| = 54.0855
+Objective = 4.94754e+06 ||grad|| = 54.8399
+Objective = 4.93993e+06 ||grad|| = 47.4874
+Objective = 4.9306e+06 ||grad|| = 47.4164
+Objective = 4.9216e+06 ||grad|| = 45.0245
+Objective = 4.91375e+06 ||grad|| = 44.9336
+Objective = 4.905e+06 ||grad|| = 44.5187
+Objective = 4.89842e+06 ||grad|| = 43.8795
+Objective = 4.88941e+06 ||grad|| = 43.1095
+Objective = 4.88227e+06 ||grad|| = 43.7894
+Objective = 4.87389e+06 ||grad|| = 43.3275
+Objective = 4.86858e+06 ||grad|| = 44.4086
+Objective = 4.85938e+06 ||grad|| = 45.0333
+Objective = 4.85578e+06 ||grad|| = 44.7088
+Objective = 4.84494e+06 ||grad|| = 48.8613
+Objective = 4.84012e+06 ||grad|| = 42.8669
+Objective = 4.83362e+06 ||grad|| = 45.6364
+Objective = 4.82757e+06 ||grad|| = 42.952
+Objective = 4.82382e+06 ||grad|| = 44.0629
+Objective = 4.81523e+06 ||grad|| = 45.7962
+Objective = 4.81189e+06 ||grad|| = 42.5744
+Objective = 4.80487e+06 ||grad|| = 44.8871
+Objective = 4.80061e+06 ||grad|| = 43.2342
+Objective = 4.7957e+06 ||grad|| = 43.4871
+Objective = 4.79064e+06 ||grad|| = 43.2816
+Objective = 4.78553e+06 ||grad|| = 41.6356
+Objective = 4.78164e+06 ||grad|| = 43.937
+Objective = 4.77527e+06 ||grad|| = 44.5444
+Objective = 4.77356e+06 ||grad|| = 44.2679
+Objective = 4.76729e+06 ||grad|| = 42.2664
+Objective = 4.76352e+06 ||grad|| = 26.0517
+Objective = 4.76113e+06 ||grad|| = 17.1982
+Objective = 4.75899e+06 ||grad|| = 16.0342
+Objective = 4.7579e+06 ||grad|| = 13.654
+!
+Objective = 4.7579e+06 ||grad|| = 32.4987
+Objective = 4.75354e+06 ||grad|| = 32.4987
+Objective = 4.7516e+06 ||grad|| = 18.5141
+Objective = 4.75009e+06 ||grad|| = 15.9795
+Objective = 4.749e+06 ||grad|| = 12.8412
+Objective = 4.74862e+06 ||grad|| = 14.2331
+Objective = 4.74854e+06 ||grad|| = 26.1616
+Objective = 4.74538e+06 ||grad|| = 25.1994
+Objective = 4.74356e+06 ||grad|| = 16.15
+Objective = 4.74228e+06 ||grad|| = 13.2201
+Objective = 4.74115e+06 ||grad|| = 11.6972
+Objective = 4.74004e+06 ||grad|| = 9.96003
+Objective = 4.73902e+06 ||grad|| = 9.98157
+Objective = 4.73802e+06 ||grad|| = 9.61379
+Objective = 4.73706e+06 ||grad|| = 8.55104
+Objective = 4.73613e+06 ||grad|| = 8.77556
+Objective = 4.73605e+06 ||grad|| = 8.23256
+!
+Objective = 4.73605e+06 ||grad|| = 23.2829
+Objective = 4.73347e+06 ||grad|| = 23.2829
+Objective = 4.73248e+06 ||grad|| = 14.5909
+Objective = 4.73153e+06 ||grad|| = 15.261
+Objective = 4.73075e+06 ||grad|| = 14.0181
+Objective = 4.73035e+06 ||grad|| = 15.5924
+Objective = 4.72931e+06 ||grad|| = 16.8693
+Objective = 4.7291e+06 ||grad|| = 15.5227
+Objective = 4.72792e+06 ||grad|| = 18.3359
+Objective = 4.72714e+06 ||grad|| = 15.3001
+Objective = 4.72625e+06 ||grad|| = 14.8278
+Objective = 4.72554e+06 ||grad|| = 14.5805
+Objective = 4.72495e+06 ||grad|| = 14.4784
+Objective: 4.72495e+06
+Current best HPWL: 1.06649e+07
+--------- epoch = 0---------
+Objective = 1.85337e+07 ||grad|| = 154.944
+Objective = 1.78343e+07 ||grad|| = 151.57
+Objective = 1.71536e+07 ||grad|| = 148.437
+Objective = 1.64909e+07 ||grad|| = 145.39
+Objective = 1.58443e+07 ||grad|| = 142.522
+Objective = 1.52127e+07 ||grad|| = 139.989
+Objective = 1.45956e+07 ||grad|| = 137.371
+Objective = 1.39922e+07 ||grad|| = 135.045
+Objective = 1.34015e+07 ||grad|| = 132.94
+Objective = 1.28241e+07 ||grad|| = 130.677
+Objective = 1.22591e+07 ||grad|| = 128.527
+Objective = 1.17071e+07 ||grad|| = 126.584
+Objective = 1.11666e+07 ||grad|| = 124.654
+Objective = 1.0638e+07 ||grad|| = 122.702
+Objective = 1.01207e+07 ||grad|| = 120.984
+Objective = 9.61461e+06 ||grad|| = 119.099
+Objective = 9.12042e+06 ||grad|| = 117.274
+Objective = 8.63753e+06 ||grad|| = 115.624
+Objective = 8.16556e+06 ||grad|| = 113.855
+Objective = 7.70603e+06 ||grad|| = 112.032
+Objective = 7.25787e+06 ||grad|| = 110.26
+Objective = 6.82235e+06 ||grad|| = 108.278
+Objective = 6.39849e+06 ||grad|| = 106.553
+Objective = 5.98586e+06 ||grad|| = 104.642
+Objective = 5.58659e+06 ||grad|| = 102.661
+Objective = 5.19881e+06 ||grad|| = 101.287
+Objective = 4.8248e+06 ||grad|| = 99.2291
+Objective = 4.46367e+06 ||grad|| = 97.6804
+Objective = 4.11761e+06 ||grad|| = 95.84
+Objective = 3.786e+06 ||grad|| = 94.1889
+Objective = 3.47091e+06 ||grad|| = 92.6292
+Objective = 3.17019e+06 ||grad|| = 91.298
+Objective = 2.8875e+06 ||grad|| = 90.319
+Objective = 2.62123e+06 ||grad|| = 90.4234
+Objective = 2.3732e+06 ||grad|| = 89.8445
+Objective = 2.14155e+06 ||grad|| = 90.501
+Objective = 1.92963e+06 ||grad|| = 90.397
+Objective = 1.7395e+06 ||grad|| = 92.0102
+Objective = 1.57765e+06 ||grad|| = 92.1736
+Objective = 1.44339e+06 ||grad|| = 95.364
+Objective = 1.32947e+06 ||grad|| = 96.0072
+Objective = 1.24451e+06 ||grad|| = 100.07
+Objective = 1.18637e+06 ||grad|| = 100.848
+Objective = 1.17222e+06 ||grad|| = 105.794
+Objective = 1.13644e+06 ||grad|| = 106.085
+Objective = 1.06754e+06 ||grad|| = 92.0235
+Objective = 1.01663e+06 ||grad|| = 69.7677
+Objective = 973966 ||grad|| = 62.5597
+Objective = 934115 ||grad|| = 58.7845
+Objective = 900474 ||grad|| = 49.4832
+Objective = 871141 ||grad|| = 48.814
+Objective = 847757 ||grad|| = 44.2545
+Objective = 833295 ||grad|| = 36.1496
+Objective = 826202 ||grad|| = 38.6785
+Objective = 819455 ||grad|| = 34.1522
+Objective = 812315 ||grad|| = 38.9604
+Objective = 804785 ||grad|| = 42.3296
+Objective = 797715 ||grad|| = 37.696
+Objective = 793967 ||grad|| = 40.4986
+Objective = 791714 ||grad|| = 38.0581
+Objective = 791043 ||grad|| = 42.0054
+Objective = 790305 ||grad|| = 38.23
+Objective = 789000 ||grad|| = 36.2452
+Objective = 787810 ||grad|| = 32.8856
+Objective = 787584 ||grad|| = 30.0781
+Objective = 787361 ||grad|| = 29.6004
+Objective = 787142 ||grad|| = 29.1355
+Objective = 786927 ||grad|| = 28.6873
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+!
+Objective = 786927 ||grad|| = 28.2549
+--------- epoch = 1---------
+Objective = 2.02167e+08 ||grad|| = 6061.9
+Objective = 1.54207e+08 ||grad|| = 10399.3
+Objective = 1.0199e+08 ||grad|| = 12926.8
+Objective = 7.10836e+07 ||grad|| = 9717.17
+Objective = 5.8645e+07 ||grad|| = 4358.25
+Objective = 5.03846e+07 ||grad|| = 2291.88
+Objective = 4.28443e+07 ||grad|| = 1919.5
+Objective = 3.48769e+07 ||grad|| = 1854.72
+Objective = 2.75747e+07 ||grad|| = 1975.15
+Objective = 2.25526e+07 ||grad|| = 1477.57
+Objective = 1.89257e+07 ||grad|| = 1029.87
+Objective = 1.64578e+07 ||grad|| = 726.246
+Objective = 1.45859e+07 ||grad|| = 526.667
+Objective = 1.32436e+07 ||grad|| = 395.995
+Objective = 1.21614e+07 ||grad|| = 309.224
+Objective = 1.12307e+07 ||grad|| = 269.577
+Objective = 1.04225e+07 ||grad|| = 237.655
+Objective = 9.7246e+06 ||grad|| = 213.249
+Objective = 9.17745e+06 ||grad|| = 183.251
+Objective = 8.74145e+06 ||grad|| = 157.714
+Objective = 8.3636e+06 ||grad|| = 141.332
+Objective = 8.02726e+06 ||grad|| = 131.284
+Objective = 7.73654e+06 ||grad|| = 123.011
+Objective = 7.48447e+06 ||grad|| = 115.047
+Objective = 7.26901e+06 ||grad|| = 109.519
+Objective = 7.08346e+06 ||grad|| = 105.028
+Objective = 6.92004e+06 ||grad|| = 100.753
+Objective = 6.77235e+06 ||grad|| = 99.4561
+Objective = 6.64155e+06 ||grad|| = 95.964
+Objective = 6.5218e+06 ||grad|| = 95.9564
+Objective = 6.41341e+06 ||grad|| = 94.257
+Objective = 6.32158e+06 ||grad|| = 93.3534
+Objective = 6.23797e+06 ||grad|| = 93.0239
+Objective = 6.15677e+06 ||grad|| = 93.4169
+Objective = 6.08324e+06 ||grad|| = 92.342
+Objective = 6.0153e+06 ||grad|| = 93.6756
+Objective = 5.94735e+06 ||grad|| = 92.919
+Objective = 5.88509e+06 ||grad|| = 92.9768
+Objective = 5.82806e+06 ||grad|| = 92.894
+Objective = 5.78075e+06 ||grad|| = 93.2627
+Objective = 5.73702e+06 ||grad|| = 94.1095
+Objective = 5.6906e+06 ||grad|| = 95.2616
+Objective = 5.64138e+06 ||grad|| = 94.9842
+Objective = 5.59989e+06 ||grad|| = 95.0177
+Objective = 5.55901e+06 ||grad|| = 95.6845
+Objective = 5.52228e+06 ||grad|| = 96.1901
+Objective = 5.48539e+06 ||grad|| = 97.0956
+Objective = 5.44972e+06 ||grad|| = 96.6648
+Objective = 5.41648e+06 ||grad|| = 96.9341
+Objective = 5.37709e+06 ||grad|| = 97.453
+Objective = 5.33814e+06 ||grad|| = 97.6928
+Objective = 5.30516e+06 ||grad|| = 97.7583
+Objective = 5.27477e+06 ||grad|| = 98.3512
+Objective = 5.24456e+06 ||grad|| = 98.9758
+Objective = 5.21512e+06 ||grad|| = 99.6012
+Objective = 5.18673e+06 ||grad|| = 99.7205
+Objective = 5.15789e+06 ||grad|| = 100.018
+Objective = 5.12671e+06 ||grad|| = 100.191
+Objective = 5.09935e+06 ||grad|| = 99.7517
+Objective = 5.07417e+06 ||grad|| = 100.637
+Objective = 5.04309e+06 ||grad|| = 101.217
+Objective = 5.01718e+06 ||grad|| = 100.972
+Objective = 4.99401e+06 ||grad|| = 101.401
+Objective = 4.96385e+06 ||grad|| = 101.443
+Objective = 4.93829e+06 ||grad|| = 101.384
+Objective = 4.9176e+06 ||grad|| = 101.68
+Objective = 4.89174e+06 ||grad|| = 101.917
+Objective = 4.87061e+06 ||grad|| = 101.911
+Objective = 4.84955e+06 ||grad|| = 102.337
+Objective = 4.82637e+06 ||grad|| = 102.649
+--------- epoch = 2---------
+Objective = 5.25657e+06 ||grad|| = 119.451
+Objective = 5.23721e+06 ||grad|| = 108.837
+Objective = 5.15238e+06 ||grad|| = 105.749
+Objective = 5.09455e+06 ||grad|| = 79.1803
+Objective = 5.06268e+06 ||grad|| = 56.1522
+Objective = 5.03951e+06 ||grad|| = 50.1579
+Objective = 5.02131e+06 ||grad|| = 47.4081
+Objective = 5.00663e+06 ||grad|| = 46.1019
+Objective = 4.99454e+06 ||grad|| = 43.6115
+Objective = 4.98523e+06 ||grad|| = 43.0103
+Objective = 4.97651e+06 ||grad|| = 42.0489
+Objective = 4.97001e+06 ||grad|| = 42.7847
+Objective = 4.96297e+06 ||grad|| = 42.0917
+Objective = 4.95818e+06 ||grad|| = 44.1586
+Objective = 4.95112e+06 ||grad|| = 43.065
+Objective = 4.94797e+06 ||grad|| = 46.0393
+Objective = 4.94099e+06 ||grad|| = 46.4907
+Objective = 4.94096e+06 ||grad|| = 47.2564
+Objective = 4.93233e+06 ||grad|| = 51.3002
+Objective = 4.93083e+06 ||grad|| = 46.3727
+Objective = 4.92421e+06 ||grad|| = 51.0056
+Objective = 4.92027e+06 ||grad|| = 46.2826
+Objective = 4.9189e+06 ||grad|| = 48.3948
+Objective = 4.91201e+06 ||grad|| = 49.5995
+Objective = 4.90944e+06 ||grad|| = 46.5553
+Objective = 4.90495e+06 ||grad|| = 48.6169
+Objective = 4.90051e+06 ||grad|| = 46.8384
+Objective = 4.89835e+06 ||grad|| = 46.4736
+Objective = 4.89393e+06 ||grad|| = 47.2658
+Objective = 4.8913e+06 ||grad|| = 45.9294
+Objective = 4.88819e+06 ||grad|| = 46.1605
+Objective = 4.88477e+06 ||grad|| = 46.5042
+Objective = 4.88172e+06 ||grad|| = 45.4373
+Objective = 4.87893e+06 ||grad|| = 45.0892
+Objective = 4.87668e+06 ||grad|| = 45.0793
+Objective = 4.8741e+06 ||grad|| = 45.2681
+Objective = 4.87175e+06 ||grad|| = 45.8736
+Objective = 4.86877e+06 ||grad|| = 44.9224
+Objective = 4.86752e+06 ||grad|| = 46.0309
+Objective = 4.86531e+06 ||grad|| = 45.2561
+Objective = 4.86528e+06 ||grad|| = 47.0234
+Objective = 4.86157e+06 ||grad|| = 47.2836
+Objective = 4.85946e+06 ||grad|| = 48.1139
+Objective = 4.85277e+06 ||grad|| = 44.4953
+Objective = 4.84872e+06 ||grad|| = 27.8291
+Objective = 4.84618e+06 ||grad|| = 17.4887
+Objective = 4.84429e+06 ||grad|| = 14.7662
+Objective = 4.84242e+06 ||grad|| = 14.5944
+Objective = 4.84099e+06 ||grad|| = 10.3038
+Objective = 4.83963e+06 ||grad|| = 11.3595
+Objective = 4.83843e+06 ||grad|| = 9.94628
+Objective = 4.83743e+06 ||grad|| = 8.22978
+Objective = 4.83647e+06 ||grad|| = 8.46826
+Objective = 4.83556e+06 ||grad|| = 7.96653
+Objective = 4.83474e+06 ||grad|| = 7.27076
+Objective = 4.83399e+06 ||grad|| = 7.3212
+Objective = 4.83328e+06 ||grad|| = 6.49894
+Objective = 4.83263e+06 ||grad|| = 7.14496
+Objective = 4.83201e+06 ||grad|| = 6.61852
+Objective = 4.83144e+06 ||grad|| = 6.6779
+Objective = 4.8309e+06 ||grad|| = 6.64796
+Objective = 4.83035e+06 ||grad|| = 6.35252
+Objective = 4.82984e+06 ||grad|| = 6.43753
+Objective = 4.82937e+06 ||grad|| = 6.85863
+Objective = 4.82894e+06 ||grad|| = 5.74782
+Objective = 4.82858e+06 ||grad|| = 6.78709
+Objective = 4.82814e+06 ||grad|| = 7.21579
+Objective = 4.82763e+06 ||grad|| = 6.70861
+Objective = 4.8272e+06 ||grad|| = 7.27323
+Objective = 4.82693e+06 ||grad|| = 6.87932
+Objective: 4.82693e+06
+Current best HPWL: 1.06649e+07
+--------- epoch = 0---------
+Objective = 1.84565e+07 ||grad|| = 154.982
+Objective = 1.77583e+07 ||grad|| = 151.558
+Objective = 1.70784e+07 ||grad|| = 148.136
+Objective = 1.64159e+07 ||grad|| = 145.297
+Objective = 1.57698e+07 ||grad|| = 142.55
+Objective = 1.5139e+07 ||grad|| = 139.78
+Objective = 1.45224e+07 ||grad|| = 137.327
+Objective = 1.39201e+07 ||grad|| = 135.066
+Objective = 1.33302e+07 ||grad|| = 132.777
+Objective = 1.27538e+07 ||grad|| = 130.554
+Objective = 1.21898e+07 ||grad|| = 128.595
+Objective = 1.16387e+07 ||grad|| = 126.402
+Objective = 1.11e+07 ||grad|| = 124.447
+Objective = 1.05735e+07 ||grad|| = 122.643
+Objective = 1.00586e+07 ||grad|| = 120.552
+Objective = 9.55523e+06 ||grad|| = 118.765
+Objective = 9.06393e+06 ||grad|| = 116.846
+Objective = 8.58481e+06 ||grad|| = 114.976
+Objective = 8.1166e+06 ||grad|| = 113.244
+Objective = 7.66066e+06 ||grad|| = 111.262
+Objective = 7.21642e+06 ||grad|| = 109.637
+Objective = 6.78378e+06 ||grad|| = 107.944
+Objective = 6.36337e+06 ||grad|| = 105.924
+Objective = 5.95528e+06 ||grad|| = 104.302
+Objective = 5.5584e+06 ||grad|| = 102.649
+Objective = 5.17518e+06 ||grad|| = 100.708
+Objective = 4.80345e+06 ||grad|| = 98.9947
+Objective = 4.44668e+06 ||grad|| = 97.0682
+Objective = 4.10145e+06 ||grad|| = 95.8623
+Objective = 3.77291e+06 ||grad|| = 93.8474
+Objective = 3.45969e+06 ||grad|| = 92.5262
+Objective = 3.16352e+06 ||grad|| = 91.0403
+Objective = 2.88187e+06 ||grad|| = 90.6644
+Objective = 2.61789e+06 ||grad|| = 90.0746
+Objective = 2.36882e+06 ||grad|| = 90.1431
+Objective = 2.13825e+06 ||grad|| = 89.7964
+Objective = 1.92831e+06 ||grad|| = 90.986
+Objective = 1.74272e+06 ||grad|| = 90.784
+Objective = 1.58091e+06 ||grad|| = 93.6642
+Objective = 1.44566e+06 ||grad|| = 93.7542
+Objective = 1.33904e+06 ||grad|| = 97.1135
+Objective = 1.24824e+06 ||grad|| = 98.0647
+Objective = 1.19163e+06 ||grad|| = 102.061
+Objective = 1.16222e+06 ||grad|| = 103.232
+Objective = 1.13885e+06 ||grad|| = 107.688
+Objective = 1.06552e+06 ||grad|| = 99.3822
+Objective = 1.01467e+06 ||grad|| = 71.1374
+Objective = 972110 ||grad|| = 62.5394
+Objective = 933133 ||grad|| = 57.8101
+Objective = 899656 ||grad|| = 49.9439
+Objective = 870607 ||grad|| = 48.1617
+Objective = 848211 ||grad|| = 43.0641
+Objective = 834396 ||grad|| = 36.9966
+Objective = 827468 ||grad|| = 36.7979
+Objective = 820802 ||grad|| = 34.2001
+Objective = 812942 ||grad|| = 37.543
+Objective = 804853 ||grad|| = 42.5668
+Objective = 797690 ||grad|| = 35.0975
+Objective = 794531 ||grad|| = 43.1415
+Objective = 793019 ||grad|| = 37.9828
+Objective = 792416 ||grad|| = 52.1942
+Objective = 785131 ||grad|| = 51.2936
+Objective = 781183 ||grad|| = 28.5161
+Objective = 778967 ||grad|| = 19.4484
+Objective = 776468 ||grad|| = 21.0519
+Objective = 775337 ||grad|| = 11.8801
+Objective = 773732 ||grad|| = 16.6566
+Objective = 772934 ||grad|| = 11.0505
+Objective = 772432 ||grad|| = 16.2654
+Objective = 771666 ||grad|| = 17.4981
+Objective = 771560 ||grad|| = 18.9817
+Objective = 770978 ||grad|| = 19.318
+Objective = 770657 ||grad|| = 11.636
+Objective = 770376 ||grad|| = 6.287
+Objective = 769707 ||grad|| = 13.9197
+Objective = 769360 ||grad|| = 11.6647
+Objective = 768941 ||grad|| = 7.21197
+Objective = 768535 ||grad|| = 12.0439
+Objective = 768249 ||grad|| = 10.178
+Objective = 768226 ||grad|| = 17.2334
+Objective = 767686 ||grad|| = 18.0712
+Objective = 767364 ||grad|| = 11.1241
+Objective = 767167 ||grad|| = 6.41999
+Objective = 767029 ||grad|| = 5.10022
+Objective = 766793 ||grad|| = 13.7645
+Objective = 766486 ||grad|| = 11.7601
+Objective = 766248 ||grad|| = 6.83083
+Objective = 766211 ||grad|| = 11.7564
+Objective = 765769 ||grad|| = 12.6127
+Objective = 765202 ||grad|| = 9.09852
+Objective = 764582 ||grad|| = 11.4783
+Objective = 764029 ||grad|| = 10.8558
+Objective = 763936 ||grad|| = 9.07186
+Objective = 763716 ||grad|| = 9.3385
+Objective = 763294 ||grad|| = 10.4123
+Objective = 763103 ||grad|| = 9.33845
+Objective = 763055 ||grad|| = 12.8588
+Objective = 763032 ||grad|| = 14.1022
+!
+Objective = 763032 ||grad|| = 18.5229
+Objective = 762464 ||grad|| = 18.5229
+--------- epoch = 1---------
+Objective = 1.9276e+08 ||grad|| = 6285.13
+Objective = 1.31895e+08 ||grad|| = 13384.1
+Objective = 9.14011e+07 ||grad|| = 12196.5
+Objective = 8.68873e+07 ||grad|| = 5174.93
+Objective = 7.78053e+07 ||grad|| = 3381.75
+Objective = 7.04317e+07 ||grad|| = 2782.02
+Objective = 6.12025e+07 ||grad|| = 2492.69
+Objective = 5.14721e+07 ||grad|| = 2347.01
+Objective = 4.25713e+07 ||grad|| = 2459.76
+Objective = 3.68818e+07 ||grad|| = 1828.08
+Objective = 3.29632e+07 ||grad|| = 1350.22
+Objective = 2.90143e+07 ||grad|| = 1138.27
+Objective = 2.56024e+07 ||grad|| = 982.603
+Objective = 2.22086e+07 ||grad|| = 900.272
+Objective = 1.92911e+07 ||grad|| = 783.552
+Objective = 1.69847e+07 ||grad|| = 669.485
+Objective = 1.5336e+07 ||grad|| = 515.926
+Objective = 1.40957e+07 ||grad|| = 374.187
+Objective = 1.29998e+07 ||grad|| = 304.781
+Objective = 1.19836e+07 ||grad|| = 291.748
+Objective = 1.11312e+07 ||grad|| = 261.585
+Objective = 1.04128e+07 ||grad|| = 219.566
+Objective = 9.84256e+06 ||grad|| = 185.734
+Objective = 9.34606e+06 ||grad|| = 171.014
+Objective = 8.92659e+06 ||grad|| = 148.301
+Objective = 8.55399e+06 ||grad|| = 141.256
+Objective = 8.23575e+06 ||grad|| = 129.588
+Objective = 7.96789e+06 ||grad|| = 118.467
+Objective = 7.72834e+06 ||grad|| = 113.213
+Objective = 7.50562e+06 ||grad|| = 108.392
+Objective = 7.3026e+06 ||grad|| = 104.327
+Objective = 7.12787e+06 ||grad|| = 99.9189
+Objective = 6.96495e+06 ||grad|| = 97.545
+Objective = 6.81594e+06 ||grad|| = 94.2019
+Objective = 6.67919e+06 ||grad|| = 92.9855
+Objective = 6.55465e+06 ||grad|| = 91.2012
+Objective = 6.44246e+06 ||grad|| = 89.5629
+Objective = 6.33803e+06 ||grad|| = 89.2692
+Objective = 6.23805e+06 ||grad|| = 89.9028
+Objective = 6.14486e+06 ||grad|| = 89.4636
+Objective = 6.06285e+06 ||grad|| = 89.8278
+Objective = 5.98235e+06 ||grad|| = 89.7368
+Objective = 5.90041e+06 ||grad|| = 90.5971
+Objective = 5.81946e+06 ||grad|| = 90.3522
+Objective = 5.7468e+06 ||grad|| = 90.2436
+Objective = 5.674e+06 ||grad|| = 90.709
+Objective = 5.6062e+06 ||grad|| = 90.0888
+Objective = 5.54088e+06 ||grad|| = 91.1566
+Objective = 5.47671e+06 ||grad|| = 91.2216
+Objective = 5.41729e+06 ||grad|| = 91.4754
+Objective = 5.35713e+06 ||grad|| = 91.9634
+Objective = 5.3005e+06 ||grad|| = 92.4529
+Objective = 5.24337e+06 ||grad|| = 92.4127
+Objective = 5.18714e+06 ||grad|| = 92.3201
+Objective = 5.13391e+06 ||grad|| = 93.1837
+Objective = 5.07915e+06 ||grad|| = 93.0269
+Objective = 5.03039e+06 ||grad|| = 93.2819
+Objective = 4.98536e+06 ||grad|| = 93.4362
+Objective = 4.93147e+06 ||grad|| = 93.9835
+Objective = 4.87896e+06 ||grad|| = 93.9026
+Objective = 4.83036e+06 ||grad|| = 94.0791
+Objective = 4.78013e+06 ||grad|| = 94.7419
+Objective = 4.72635e+06 ||grad|| = 94.401
+Objective = 4.67734e+06 ||grad|| = 94.7268
+Objective = 4.62746e+06 ||grad|| = 95.0172
+Objective = 4.5788e+06 ||grad|| = 94.8649
+Objective = 4.53309e+06 ||grad|| = 95.1711
+Objective = 4.48594e+06 ||grad|| = 95.6206
+Objective = 4.44385e+06 ||grad|| = 95.3841
+Objective = 4.40075e+06 ||grad|| = 96.3997
+--------- epoch = 2---------
+Objective = 4.78795e+06 ||grad|| = 112.162
+Objective = 4.76956e+06 ||grad|| = 106.92
+Objective = 4.75604e+06 ||grad|| = 103.348
+!
+Objective = 4.75604e+06 ||grad|| = 112.232
+Objective = 4.71574e+06 ||grad|| = 112.232
+!
+Objective = 4.71574e+06 ||grad|| = 111.397
+Objective = 4.71327e+06 ||grad|| = 111.397
+!
+Objective = 4.71327e+06 ||grad|| = 115.353
+Objective = 4.68426e+06 ||grad|| = 115.353
+!
+Objective = 4.68426e+06 ||grad|| = 113.833
+Objective = 4.68201e+06 ||grad|| = 113.833
+!
+Objective = 4.68201e+06 ||grad|| = 116.505
+Objective = 4.66304e+06 ||grad|| = 116.505
+!
+Objective = 4.66304e+06 ||grad|| = 115.162
+Objective = 4.65995e+06 ||grad|| = 115.162
+!
+Objective = 4.65995e+06 ||grad|| = 116.6
+Objective = 4.64693e+06 ||grad|| = 116.6
+!
+Objective = 4.64693e+06 ||grad|| = 115.978
+Objective = 4.64151e+06 ||grad|| = 115.978
+!
+Objective = 4.64151e+06 ||grad|| = 116.808
+Objective = 4.63201e+06 ||grad|| = 116.808
+!
+Objective = 4.63201e+06 ||grad|| = 116.237
+Objective = 4.62764e+06 ||grad|| = 116.237
+!
+Objective = 4.62764e+06 ||grad|| = 117.232
+Objective = 4.61853e+06 ||grad|| = 117.232
+!
+Objective = 4.61853e+06 ||grad|| = 116.639
+Objective = 4.61443e+06 ||grad|| = 116.639
+!
+Objective = 4.61443e+06 ||grad|| = 117.293
+Objective = 4.60641e+06 ||grad|| = 117.293
+!
+Objective = 4.60641e+06 ||grad|| = 117.224
+Objective = 4.60298e+06 ||grad|| = 117.224
+!
+Objective = 4.60298e+06 ||grad|| = 117.561
+Objective = 4.59521e+06 ||grad|| = 117.561
+!
+Objective = 4.59521e+06 ||grad|| = 116.885
+Objective = 4.5927e+06 ||grad|| = 116.885
+!
+Objective = 4.5927e+06 ||grad|| = 118.06
+Objective = 4.58547e+06 ||grad|| = 118.06
+!
+Objective = 4.58547e+06 ||grad|| = 117.625
+Objective = 4.58204e+06 ||grad|| = 117.625
+!
+Objective = 4.58204e+06 ||grad|| = 118.024
+Objective = 4.57632e+06 ||grad|| = 118.024
+!
+Objective = 4.57632e+06 ||grad|| = 117.481
+Objective = 4.57436e+06 ||grad|| = 117.481
+!
+Objective = 4.57436e+06 ||grad|| = 118.228
+Objective = 4.56786e+06 ||grad|| = 118.228
+!
+Objective = 4.56786e+06 ||grad|| = 117.842
+Objective = 4.566e+06 ||grad|| = 117.842
+!
+Objective = 4.566e+06 ||grad|| = 118.143
+Objective = 4.55982e+06 ||grad|| = 118.143
+!
+Objective = 4.55982e+06 ||grad|| = 117.497
+Objective = 4.55794e+06 ||grad|| = 117.497
+!
+Objective = 4.55794e+06 ||grad|| = 118.232
+Objective = 4.55275e+06 ||grad|| = 118.232
+!
+Objective = 4.55275e+06 ||grad|| = 117.674
+Objective = 4.54996e+06 ||grad|| = 117.674
+!
+Objective = 4.54996e+06 ||grad|| = 118.542
+Objective = 4.54514e+06 ||grad|| = 118.542
+!
+Objective = 4.54514e+06 ||grad|| = 117.684
+Objective = 4.54322e+06 ||grad|| = 117.684
+!
+Objective = 4.54322e+06 ||grad|| = 118.337
+Objective = 4.53777e+06 ||grad|| = 118.337
+!
+Objective = 4.53777e+06 ||grad|| = 117.669
+Objective = 4.53649e+06 ||grad|| = 117.669
+!
+Objective = 4.53649e+06 ||grad|| = 118.436
+Objective = 4.53068e+06 ||grad|| = 118.436
+!
+Objective = 4.53068e+06 ||grad|| = 117.879
+Objective = 4.52954e+06 ||grad|| = 117.879
+!
+Objective = 4.52954e+06 ||grad|| = 118.611
+Objective = 4.52417e+06 ||grad|| = 118.611
+!
+Objective = 4.52417e+06 ||grad|| = 118.315
+Objective: 4.52417e+06
+Current best HPWL: 1.06649e+07
+Real duration: 515 seconds.
+
+HPWL: 13161993    Time: 515.77 sec (8.60 min)
+./../verifier/verify ../testcase/public2/public2.aux ../output/public2.gp.pl
+############ PARSE GLOBAL PLACEMENT RESULT #############
+load pl file: ../output/public2.gp.pl
+Benchmark: public2
+
+HPWL: 13161993
+
+##################### LEGALIZATION #####################
+macro size: 0
+-
+The global placement result can be legalized successfully.
+
+HPWL: 16334618 (24.10%)
+
+################## DETAILED PLACEMENT ##################
+ run: 0 HPWL=15007121 (-8.127%)(-8.127%)   time: 0 sec   all: 0 sec
+ run: 1 HPWL=14669089 (-2.252%)(-10.196%)   time: 0 sec   all: 0 sec
+ run: 2 HPWL=14521406 (-1.007%)(-11.100%)   time: 0 sec   all: 1 sec
+ run: 3 HPWL=14438203 (-0.573%)(-11.610%)   time: 0 sec   all: 1 sec
+ run: 4 HPWL=14385501 (-0.365%)(-11.932%)   time: 0 sec   all: 2 sec
+ run: 5 HPWL=14350120 (-0.246%)(-12.149%)   time: 0 sec   all: 2 sec
+ run: 6 HPWL=14326448 (-0.165%)(-12.294%)   time: 0 sec   all: 3 sec
+ run: 7 HPWL=14306984 (-0.136%)(-12.413%)   time: 0 sec   all: 3 sec
+
+HPWL: 14306984 (-12.41%)
+
+####################### SUMMARY ########################
+Benchmark: public2
+
+Global HPWL: 13161993
+ Legal HPWL: 16334618    Time: 0.46 sec (0.01 min)
+Detail HPWL: 14306984    Time: 3.87 sec (0.06 min)
+========================================================
+       HPWL: 14306984    Time: 4.32 sec (0.07 min)
+
+[Success] Your output file satisfies our basic requirements.

@@ -10,12 +10,12 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     numModules = _placement.numModules();
 
     lambda = 0;
-    binCut = 15;
+    cutsize = 17;
     gamma = chipH / 700;
     
-    binTotalNum = binCut * binCut;
-    binW = chipW / binCut;
-    binH = chipH / binCut;
+    binTotalNum = cutsize * cutsize;
+    binW = chipW / cutsize;
+    binH = chipH / cutsize;
     binArea = binW * binH;
 
     tarDensity = 0.0;
@@ -95,8 +95,8 @@ void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<doub
                 aY = 4 / ((binH + mod.height()) * (2 * binH + mod.height()));
                 bY = 4 / (binH * (2 * binH + mod.height()));
 
-                a = binIdx % binCut;
-                b = binIdx / binCut;
+                a = binIdx % cutsize;
+                b = binIdx / cutsize;
                 c = mod.area() / binArea;
 
                 dX = x[2 * mID] - ((a + 0.5) * binW + _placement.boundryLeft());
@@ -183,10 +183,6 @@ unsigned ExampleFunction::dimension()
     // each two dimension represent the X and Y dimensions of each block
 }
 
-void ExampleFunction::increaseLambda(unsigned offset)
-{
-    lambda += offset;
-}
 double ExampleFunction::bellShapeFunc(unsigned mID, unsigned binIdx, double oldX, double oldY)
 {
     auto mod = _placement.module(mID);
@@ -198,7 +194,7 @@ double ExampleFunction::bellShapeFunc(unsigned mID, unsigned binIdx, double oldX
     aY = 4 / ((binH + mH) * (2 * binH + mH));
     bY = 4 / (binH * (2 * binH + mH));
 
-    unsigned a{binIdx % binCut}, b{binIdx / binCut};
+    unsigned a{binIdx % cutsize}, b{binIdx / cutsize};
     double c = mod.area() / binArea;
 
     dX = oldX - ((a + 0.5) * binW + _placement.boundryLeft());

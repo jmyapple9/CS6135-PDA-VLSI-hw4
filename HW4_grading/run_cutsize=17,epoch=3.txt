@@ -1,0 +1,19 @@
+Running HW4_grading.sh - Attempt 1
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 | 

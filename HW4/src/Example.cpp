@@ -15,9 +15,9 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     numModules = _placement.numModules();
 
 
-    binTotalNum = binCut * binCut;
-    binW = chipW / binCut;
-    binH = chipH / binCut;
+    binTotalNum = cutsize * cutsize;
+    binW = chipW / cutsize;
+    binH = chipH / cutsize;
     binArea = binW * binH;
 
     tarDensity = 0.0;
