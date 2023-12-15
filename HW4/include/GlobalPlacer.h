@@ -10,6 +10,7 @@ public:
     GlobalPlacer(wrapper::Placement &placement);
 	void randomPlace(std::vector<double>& x); // An example of random placement implemented by TA
 	void place();
+    void centerInit(std::vector<double>& result);
 
 private:
     wrapper::Placement &_placement;

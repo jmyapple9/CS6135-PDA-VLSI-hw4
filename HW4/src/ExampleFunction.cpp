@@ -9,7 +9,7 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     chipH = _placement.boundryTop() - _placement.boundryBottom();
     numModules = _placement.numModules();
 
-    lambda = 0;
+    lambda = 4000;
     binCut = 15;
     gamma = chipH / 700;
     
@@ -183,10 +183,7 @@ unsigned ExampleFunction::dimension()
     // each two dimension represent the X and Y dimensions of each block
 }
 
-void ExampleFunction::increaseLambda(unsigned offset)
-{
-    lambda += offset;
-}
+
 double ExampleFunction::bellShapeFunc(unsigned mID, unsigned binIdx, double oldX, double oldY)
 {
     auto mod = _placement.module(mID);
