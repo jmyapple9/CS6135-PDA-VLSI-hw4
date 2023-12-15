@@ -5,8 +5,14 @@
 ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     : _placement(placement)
 {
-    chipW = _placement.boundryRight() - _placement.boundryLeft();
-    chipH = _placement.boundryTop() - _placement.boundryBottom();
+    double
+        bTop{_placement.boundryTop()},
+        bBottom{_placement.boundryBottom()},
+        bRight{_placement.boundryRight()},
+        bLeft{_placement.boundryLeft()};
+    
+    chipW = bRight - bLeft;
+    chipH = bTop - bBottom;
     numModules = _placement.numModules();
 
     lambda = 0;
@@ -22,6 +28,41 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     for (size_t mID = 0; mID < numModules; ++mID)
         tarDensity += _placement.module(mID).area();
     tarDensity /= (chipW * chipH);
+
+    /* gamma = 1.0;
+
+    cout << "looking for best gamma...\n";
+    while (1)
+    {
+        double xMaxSum{0}, xMinSum{0}, yMaxSum{0}, yMinSum{0};
+
+        for (size_t nID = 0; nID < _placement.numNets(); ++nID)
+        {
+            size_t numPins = _placement.net(nID).numPins();
+            xMaxSum = xMinSum = yMaxSum = yMinSum = 0;
+            for (size_t pID = 0; pID < numPins; ++pID)
+            {
+                xMaxSum += exp(bTop / gamma);
+                xMinSum += exp(bBottom / gamma);
+                yMaxSum += exp(bRight / gamma);
+                yMinSum += exp(bLeft / gamma);
+            }
+        }
+        if (isinf(xMaxSum) or isnan(xMaxSum)
+        or isinf(xMinSum) or isnan(xMinSum)
+        or isinf(yMaxSum) or isnan(yMaxSum)
+        or isinf(yMinSum) or isnan(yMinSum))
+        {
+            gamma += 0.1;
+        }
+        else
+        {
+            cout << "Find valid gamma = " << gamma << endl;
+            // cout << "gamma in origin version" << (_placement.boundryTop() - _placement.boundryBottom())/700 << endl;
+            break;
+        }
+    } */
+
 }
 
 void ExampleFunction::evaluateFG(const vector<double> &x, double &f, vector<double> &g)
