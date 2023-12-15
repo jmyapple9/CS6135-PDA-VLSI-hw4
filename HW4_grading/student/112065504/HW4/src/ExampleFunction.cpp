@@ -10,7 +10,7 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     numModules = _placement.numModules();
 
     lambda = 0;
-    cutsize = 17;
+    cutsize = 15;
     gamma = chipH / 700;
     
     binTotalNum = cutsize * cutsize;

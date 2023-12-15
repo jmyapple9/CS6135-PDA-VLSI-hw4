@@ -1,0 +1,50 @@
+Running HW4_grading.sh - Attempt 1
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   69090724 |     487.31 | success
+   public2 |   15581944 |     536.36 | success
+   public3 |  521857665 |     483.32 | success
+   public7 |  179604107 |     491.69 | success
+   public8 |        N/A |        N/A | There is an error in the output results of public8 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public9 |  611886352 |     528.10 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 2
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   72072120 |     498.35 | success
+   public2 | 

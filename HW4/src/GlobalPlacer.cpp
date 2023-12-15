@@ -49,11 +49,11 @@ void GlobalPlacer::place()
     // auto start = chrono::system_clock::now();
 
     double best_Hpwl = DBL_MAX;
-    while (chrono::system_clock::now() < end_time)
-    {
+    // while (chrono::system_clock::now() < end_time)
+    // {
         //////////////////////////////////////////////////////
-        ef.lambda = 0;
-        randomPlace(result); // initialize the solution vector
+        // randomPlace(result); // initialize the solution vector
+        initCenter(result);
         double
             bTop{_placement.boundryTop()},
             bBottom{_placement.boundryBottom()},
@@ -69,10 +69,11 @@ void GlobalPlacer::place()
         numModules = _placement.numModules();
         numIter = 100;
         EPOCH = 3;
+        ef.lambda = 4000;
         for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
         {
             cout << "--------- epoch = " << epoch << "---------\n";
-            numIter = (epoch == 0) ? 100 : 70;
+            numIter = (epoch == 0) ? 100 : 50;
             no.setNumIteration(numIter); // user-specified parameter
             if (chrono::system_clock::now() >= end_time)
                 break;
@@ -92,8 +93,7 @@ void GlobalPlacer::place()
                 _placement.module(mID).setPosition(result[2 * mID], result[2 * mID + 1]);
             }
             no.setX(result);
-            // ef.increaseLambda(8000);
-            ef.lambda += 8000;
+            ef.lambda += 4000;
         }
 
         cout << "Objective: " << no.objective() << "\n";
@@ -107,9 +107,9 @@ void GlobalPlacer::place()
             best_result = result;
         }
         cout << "Current best HPWL: " << best_Hpwl << endl;
-    }
+    // }
 
-    unsigned numModules = _placement.numModules();
+    // unsigned numModules = _placement.numModules();
     for (unsigned mID = 0; mID < numModules; ++mID)
     {
         _placement.module(mID).setPosition(result[2 * mID], result[2 * mID + 1]);
@@ -133,4 +133,26 @@ void GlobalPlacer::place()
      * 6. Replace the form of g[] in evaluateG() by the form like "g = grad(WL()) + grad(BinDensity())"
      * 7. Set the initial vector x in place(), set step size, set #iteration, and call the solver like above example
      * */
+}
+void GlobalPlacer::initCenter(vector<double>& sol)
+{
+    double
+        bTop{_placement.boundryTop()},
+        bBottom{_placement.boundryBottom()},
+        bLeft{_placement.boundryLeft()},
+        bRight{_placement.boundryRight()};
+
+    double
+        xcen{(bLeft + bRight) / 2.0},
+        ycen{(bTop + bBottom) / 2.0};
+    for (unsigned nID = 0; nID < _placement.numModules(); ++nID)
+    {
+        wrapper::Module mod = _placement.module(nID);
+        if (!mod.isFixed())
+        {
+            mod.setCenterPosition(xcen, ycen);
+        }
+        sol[2 * nID] = mod.x();
+        sol[2 * nID + 1] = mod.y();
+    }
 }

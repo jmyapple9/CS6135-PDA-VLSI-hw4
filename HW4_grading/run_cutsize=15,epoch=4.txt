@@ -1,0 +1,492 @@
+Running HW4_grading.sh - Attempt 1
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   67628523 |     501.25 | success
+   public2 |   14486039 |     493.66 | success
+   public3 |  513563859 |     484.83 | success
+   public7 |        N/A |        N/A | There is an error in the output results of public7 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public8 |        N/A |        N/A | There is an error in the output results of public8 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public9 |  702361761 |     531.67 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 2
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   77679125 |     502.78 | success
+   public2 |   21369176 |     500.13 | success
+   public3 |  585302621 |     531.79 | success
+   public7 |  189466418 |     485.03 | success
+   public8 |  566126361 |     485.92 | success
+   public9 |  587676298 |     502.85 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 3
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   73520043 |     502.53 | success
+   public2 |   20716285 |     533.24 | success
+   public3 |  470348548 |     504.96 | success
+   public7 |        N/A |        N/A | There is an error in the output results of public7 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public8 |  426489496 |     553.72 | success
+   public9 |  545281920 |     493.00 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 4
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   75456209 |     500.30 | success
+   public2 |   15811669 |     495.18 | success
+   public3 |  471072741 |     485.08 | success
+   public7 |        N/A |        N/A | There is an error in the output results of public7 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public8 |  478769941 |     549.43 | success
+   public9 |  600072291 |     492.56 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 5
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   72265906 |     504.88 | success
+   public2 |        N/A |        N/A | There is an error in the output results of public2 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public3 |  530293145 |     488.97 | success
+   public7 |  211673918 |     488.62 | success
+   public8 |  574457021 |     530.87 | success
+   public9 |        N/A |        N/A | There is an error in the output results of public9 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 6
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   71543681 |     484.25 | success
+   public2 |   15861283 |     498.12 | success
+   public3 |  555691496 |     489.30 | success
+   public7 |  198494936 |     488.49 | success
+   public8 |  581373730 |     533.95 | success
+   public9 |  603743237 |     518.33 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 7
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   69433414 |     505.53 | success
+   public2 |   13740830 |     490.97 | success
+   public3 |  545334663 |     501.85 | success
+   public7 |  185385519 |     493.97 | success
+   public8 |  529546316 |     490.52 | success
+   public9 |  558453116 |     483.08 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 8
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   72529214 |     480.98 | success
+   public2 |   16793029 |     498.54 | success
+   public3 |        N/A |        N/A | There is an error in the output results of public3 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public7 |  188389202 |     486.71 | success
+   public8 |  554796695 |     551.45 | success
+   public9 |  553188727 |     525.44 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 9
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   74954279 |     500.94 | success
+   public2 |   17242813 |     499.95 | success
+   public3 |        N/A |        N/A | There is an error in the output results of public3 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public7 |  231572259 |     494.96 | success
+   public8 |  578234356 |     483.09 | success
+   public9 |  563051398 |     492.11 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 10
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   73387275 |     482.68 | success
+   public2 |   14326924 |     502.86 | success
+   public3 |        N/A |        N/A | There is an error in the output results of public3 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public7 |  179629031 |     486.94 | success
+   public8 |  499068495 |     547.29 | success
+   public9 |        N/A |        N/A | There is an error in the output results of public9 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 11
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   73989143 |     485.00 | success
+   public2 |   16758538 |     493.35 | success
+   public3 |  520614880 |     507.36 | success
+   public7 |  179001330 |     492.96 | success
+   public8 |  466866003 |     555.23 | success
+   public9 |        N/A |        N/A | There is an error in the output results of public9 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 12
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   73222381 |     483.37 | success
+   public2 |   17327251 |     529.45 | success
+   public3 |        N/A |        N/A | There is an error in the output results of public3 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public7 |  181689236 |     482.41 | success
+   public8 |  499564398 |     555.29 | success
+   public9 |  604820745 |     488.70 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 13
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   71688811 |     481.02 | success
+   public2 |   15274989 |     497.08 | success
+   public3 |  476764504 |     491.32 | success
+   public7 |  195560650 |     483.85 | success
+   public8 |  564400418 |     556.26 | success
+   public9 |  636834212 |     533.83 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 14
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   72883551 |     483.28 | success
+   public2 |   15358273 |     487.92 | success
+   public3 |  500043192 |     493.88 | success
+   public7 |  194144893 |     489.81 | success
+   public8 |  493906283 |     549.90 | success
+   public9 |  785695528 |     530.40 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 15
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   72376778 |     506.59 | success
+   public2 |   14246391 |     496.70 | success
+   public3 |        N/A |        N/A | There is an error in the output results of public3 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public7 |  191765769 |     490.47 | success
+   public8 |  592137379 |     540.67 | success
+   public9 |  596769061 |     525.53 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+Running HW4_grading.sh - Attempt 16
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   71128507 |     504.71 | success
+   public2 |   15908552 |     497.18 | success
+   public3 |  505758059 |     486.16 | success
+   public7 |  199460366 |     499.47 | success
+   public8 |  522828503 |     545.22 | success
+   public9 | Running HW4_grading.sh - Attempt 17
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 | 
