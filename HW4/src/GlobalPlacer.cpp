@@ -46,19 +46,23 @@ void GlobalPlacer::place()
         bLeft{_placement.boundryLeft()},
         bRight{_placement.boundryRight()};
 
+    unsigned stepSize;
+    stepSize = (bTop - bBottom) * 5;
     NumericalOptimizer no(ef);
     no.setX(result);                              // set initial solution
-    no.setStepSizeBound((bTop - bBottom) * 2); // user-specified parameter
+    no.setStepSizeBound(stepSize); // user-specified parameter
+    
     // no.solve();
 
     unsigned numModules, EPOCH, numIter;
     numModules = _placement.numModules();
-    numIter = 100;
-    EPOCH = 3;
+    // numIter = 100;
+    EPOCH = 4;
+    ef.lambda = 4000;
     for (unsigned epoch = 0; epoch < EPOCH; ++epoch)
     {
         cout << "--------- epoch = " << epoch << "---------\n";
-        numIter = (epoch == 0) ? 100 : 50;
+        numIter = 70;
         no.setNumIteration(numIter); // user-specified parameter
         no.solve();                  // Conjugate Gradient solver
         for (unsigned nID = 0; nID < numModules; ++nID)
@@ -76,7 +80,9 @@ void GlobalPlacer::place()
             _placement.module(nID).setPosition(result[2 * nID], result[2 * nID + 1]);
         }
         no.setX(result);
-        ef.lambda += 2000;
+        ef.lambda += 1000;
+        stepSize *= 0.7;
+        no.setStepSizeBound(stepSize);
     }
 // epoch=3, numIter=100:50, lmbda=4000:2000, centerInit
     cout << "Objective: " << no.objective() << "\n";

@@ -1,0 +1,29 @@
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76724774 |      97.41 | success
+   public2 |   14876022 |     204.33 | success
+   public3 |  580841812 |     370.66 | success
+   public4 |  215723558 |     147.17 | success
+   public5 |  485362692 |     345.54 | success
+   public6 |  579639690 |     374.66 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|

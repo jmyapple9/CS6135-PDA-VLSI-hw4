@@ -9,7 +9,7 @@ ExampleFunction::ExampleFunction(wrapper::Placement &placement)
     chipH = _placement.boundryTop() - _placement.boundryBottom();
     numModules = _placement.numModules();
 
-    lambda = 4000;
+    // lambda = 4000;
     binCut = 15;
     gamma = chipH / 700;
     
