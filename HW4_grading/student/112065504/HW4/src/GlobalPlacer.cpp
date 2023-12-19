@@ -80,8 +80,8 @@ void GlobalPlacer::place()
             _placement.module(nID).setPosition(result[2 * nID], result[2 * nID + 1]);
         }
         no.setX(result);
-        ef.lambda += 1000;
-        stepSize *= 0.7;
+        ef.lambda += 500;
+        stepSize *= 1;
         no.setStepSizeBound(stepSize);
     }
 // epoch=3, numIter=100:50, lmbda=4000:2000, centerInit

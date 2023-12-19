@@ -27,3 +27,65 @@ grading on 112065504:
 |    Successfully generate grades to HW4_grade.csv    |
 |                                                     |
 |-----------------------------------------------------|
+
+different from best commit:
+ef.lambda += 500;
+stepSize *= 0.5;
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   77072877 |      93.89 | success
+   public2 |   15694421 |     194.63 | success
+   public3 |  584791120 |     349.47 | success
+   public4 |  216381627 |     144.39 | success
+   public5 |  484777280 |     315.42 | success
+   public6 |  580677286 |     350.77 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76334327 |      97.60 | success
+   public2 |   12975638 |     214.09 | success
+   public3 |  586556936 |     403.82 | success
+   public4 |  215065563 |     156.70 | success
+   public5 |  488855460 |     361.99 | success
+   public6 |  579141775 |     406.84 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
