@@ -89,3 +89,581 @@ grading on 112065504:
 |    Successfully generate grades to HW4_grade.csv    |
 |                                                     |
 |-----------------------------------------------------|
+
+Different from best commit v2:
+stepSize = (bTop - bBottom) * 6;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   79139260 |     100.97 | success
+   public2 |   12210782 |     238.97 | success
+   public3 |  533307712 |     421.33 | success
+   public4 |  192407103 |     168.33 | success
+   public5 |  599475171 |     340.17 | success
+   public6 |  553889738 |     437.29 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+Different from best commit v2:
+stepSize = (bTop - bBottom) * 7;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   92953458 |      98.92 | success
+   public2 |   12727333 |     262.95 | success
+   public3 |  556227612 |     423.29 | success
+   public4 |  239621552 |     152.16 | success
+   public5 |  642068694 |     390.65 | success
+   public6 |  562760762 |     425.69 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+public1: (bTop - bBottom): 66528
+public2: (bTop - bBottom): 2368
+public3: (bTop - bBottom): 123984
+public4: (bTop - bBottom): 77112
+public5: (bTop - bBottom): 117432
+public6: (bTop - bBottom): 122472
+
+Different from best commit v2:
+stepSize = (bTop - bBottom) * 4;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   79629329 |      96.21 | success
+   public2 |   14242607 |     228.55 | success
+   public3 |  572527983 |     406.29 | success
+   public4 |  201319110 |     146.10 | success
+   public5 |  588498451 |     337.76 | success
+   public6 |  645700721 |     395.54 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+Different from best commit v2:
+stepSize = 15000;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |  229683498 |      52.27 | success
+   public2 |   12607928 |     230.02 | success
+   public3 |        N/A |        N/A | There is an error in the output results of public3 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public4 |        N/A |        N/A | There is an error in the output results of public4 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public5 |        N/A |        N/A | There is an error in the output results of public5 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public6 |        N/A |        N/A | There is an error in the output results of public6 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+stepSize = 700000;
+stepSize *= 0.4;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   90640773 |      92.73 | success
+   public2 |        N/A |        N/A | There is an error in the output results of public2 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public3 |  545294314 |     337.62 | success
+   public4 |  255670786 |     148.64 | success
+   public5 |  610322090 |     292.20 | success
+   public6 |  630916949 |     341.05 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+stepSize = 7000000;
+stepSize *= 0.1;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   77117951 |      68.63 | success
+   public2 |   15950288 |     139.79 | success
+   public3 |  598777574 |     271.08 | success
+   public4 |  216661943 |     100.84 | success
+   public5 |  482349108 |     231.15 | success
+   public6 |  584747739 |     263.48 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+EPOCH = 5;
+stepSize *= 0.1;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76936445 |      83.04 | success
+   public2 |   15973254 |     173.00 | success
+   public3 |  597795908 |     331.48 | success
+   public4 |  215085812 |     123.73 | success
+   public5 |  481364282 |     284.49 | success
+   public6 |  580759483 |     320.62 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+EPOCH = 5;
+numIter = 100;
+ef.lambda += 2000;
+stepSize *= 0.1;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   77242327 |     122.89 | success
+   public2 |   14346157 |     263.33 | success
+   public3 |  582813069 |     470.51 | success
+   public4 |  214997804 |     189.77 | success
+   public5 |  483933620 |     420.55 | success
+   public6 |  570022452 |     476.23 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+stepSize = 7000000;
+EPOCH = 5;
+stepSize *= 0.1;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   93312807 |     106.12 | success
+   public2 |   22016850 |     281.89 | success
+   public3 |  542251196 |     407.35 | success
+   public4 |        N/A |        N/A | There is an error in the output results of public4 ([Error] Fail to Legalize! The global placement result cannot be legalized.).
+   public5 |  517047205 |     364.63 | success
+   public6 | 
+
+EPOCH = 5;
+numIter = 130;
+ef.lambda += 2000;
+stepSize *= 0.1;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76949168 |     175.81 | success
+   public2 |   13358997 |     370.59 | success
+   public3 |        N/A |        TLE | Time out while testing public3.
+   public4 |  215973470 |     272.30 | success
+   public5 |        N/A |        TLE | Time out while testing public5.
+   public6 |        N/A |        N/A | The output file of public6 is not found or is empty.
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+EPOCH = 5;
+numIter = 110;
+ef.lambda += 2000;
+stepSize *= 0.1;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76914307 |     141.97 | success
+   public2 |   13757989 |     292.79 | success
+   public3 |  583825625 |     558.72 | success
+   public4 |  215741406 |     219.75 | success
+   public5 |  486984663 |     481.28 | success
+   public6 |  573804981 |     532.29 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+stepSize = (bTop - bBottom) * 5;
+EPOCH = 5;
+ef.lambda = 4000;
+numIter = (bTop - bBottom < 100000)? 150 :100;
+ef.lambda += 500;
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76722820 |     311.10 | success
+   public2 |        N/A |        TLE | Time out while testing public2.
+   public3 |        N/A |        N/A | The output file of public3 is not found or is empty.
+   public4 |        N/A |        N/A | The output file of public4 is not found or is empty.
+   public5 |        N/A |        N/A | The output file of public5 is not found or is empty.
+   public6 |        N/A |        N/A | The output file of public6 is not found or is empty.
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+stepSize = (bTop - bBottom) * 5;
+EPOCH = 5;
+ef.lambda = 4000;
+numIter = (bTop - bBottom < 100000)? 135 :100;
+ef.lambda += 500;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   75985424 |     271.52 | success
+   public2 |        N/A |        TLE | Time out while testing public2.
+   public3 |        N/A |        TLE | Time out while testing public3.
+   public4 |  216146019 |     448.04 | success
+   public5 |        N/A |        TLE | Time out while testing public5.
+   public6 |        N/A |        TLE | Time out while testing public6.
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+stepSize = (bTop - bBottom) * 5;
+EPOCH = 5;
+ef.lambda = 4000;
+numIter = (bTop - bBottom < 100000)? 120 :100;
+ef.lambda += 500;
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   77306679 |     240.78 | success
+   public2 |   13035139 |     550.64 | success
+   public3 |        N/A |        TLE | Time out while testing public3.
+   public4 |  216359377 |     398.37 | success
+   public5 |        N/A |        TLE | Time out while testing public5.
+   public6 |        N/A |        TLE | Time out while testing public6.
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+stepSize = (bTop - bBottom) * 5;
+EPOCH = 4;
+ef.lambda = 4000;
+numIter = 130;
+ef.lambda += 500;
+stepSize *= 0.5;
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76567100 |     229.03 | success
+   public2 |   13292533 |     545.46 | success
+   public3 |        N/A |        TLE | Time out while testing public3.
+   public4 |  215415190 |     372.37 | success
+   public5 |        N/A |        TLE | Time out while testing public5.
+   public6 |        N/A |        TLE | Time out while testing public6.
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+
+stepSize = (bTop - bBottom) * 5;
+EPOCH = 5;
+ef.lambda = 4000;
+numIter = (bTop - bBottom < 100000)? 130 :70;
+ef.lambda += 500;
+stepSize *= (bTop - bBottom < 100000)? 0.5 :0.1;
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76567100 |     225.59 | success
+   public2 |   13292533 |     539.39 | success
+   public3 |  597795908 |     322.95 | success
+   public4 |  215415190 |     366.60 | success
+   public5 |  481364282 |     277.55 | success
+   public6 |  580759483 |     310.51 | success
+
+|-----------------------------------------------------|
+|                                                     |
+|    Successfully generate grades to HW4_grade.csv    |
+|                                                     |
+|-----------------------------------------------------|
+
+if((bTop - bBottom) > 123000 or (bTop - bBottom) < 3000){
+    stepSize = (bTop - bBottom) * 6;
+}else{
+    stepSize = (bTop - bBottom) * 5;
+}
+
+|------------------------------------------------|
+|                                                |
+|    This script is used for PDA HW4 grading.    |
+|                                                |
+|------------------------------------------------|
+grading on 112065504:
+ checking item          | status
+------------------------|--------
+ correct tar.gz         | yes
+ correct file structure | yes
+ have README            | yes
+ have Makefile          | yes
+ correct make clean     | yes
+ correct make           | yes
+
+  testcase | wirelength |    runtime | status
+-----------|------------|------------|--------
+   public1 |   76334327 |      97.69 | success
+   public2 |   12210782 |     237.69 | success
+   public3 |  533307712 |     420.30 | success
+   public4 |  215065563 |     156.22 | success
+   public5 | 

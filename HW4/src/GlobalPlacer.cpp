@@ -36,7 +36,7 @@ void GlobalPlacer::place()
     // if you use other methods, you can skip and delete it directly.
     //////////////////////////////////////////////////////////////////
 
-    ExampleFunction ef(_placement);     // require to define the object function and gradient function
+    ExampleFunction ef(_placement);        // require to define the object function and gradient function
     vector<double> result(ef.dimension()); // solution vector, size: num_blocks*2
     // randomPlace(result);                   // initialize the solution vector
     centerInit(result);
@@ -47,11 +47,18 @@ void GlobalPlacer::place()
         bRight{_placement.boundryRight()};
 
     unsigned stepSize;
-    stepSize = (bTop - bBottom) * 5;
+    if ((bTop - bBottom) > 123000 or (bTop - bBottom) < 3000)
+    {
+        stepSize = (bTop - bBottom) * 6;
+    }
+    else
+    {
+        stepSize = (bTop - bBottom) * 5;
+    }
     NumericalOptimizer no(ef);
-    no.setX(result);                              // set initial solution
+    no.setX(result);               // set initial solution
     no.setStepSizeBound(stepSize); // user-specified parameter
-    
+
     // no.solve();
 
     unsigned numModules, EPOCH, numIter;
@@ -84,7 +91,6 @@ void GlobalPlacer::place()
         stepSize *= 1;
         no.setStepSizeBound(stepSize);
     }
-// epoch=3, numIter=100:50, lmbda=4000:2000, centerInit
     cout << "Objective: " << no.objective() << "\n";
     ////////////////////////////////////////////////////////////////
 
@@ -102,7 +108,7 @@ void GlobalPlacer::place()
      * 7. Set the initial vector x in place(), set step size, set #iteration, and call the solver like above example
      * */
 }
-void GlobalPlacer::centerInit(vector<double>& result)
+void GlobalPlacer::centerInit(vector<double> &result)
 {
     double
         bTop{_placement.boundryTop()},

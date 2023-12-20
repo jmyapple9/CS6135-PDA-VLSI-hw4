@@ -47,7 +47,12 @@ void GlobalPlacer::place()
         bRight{_placement.boundryRight()};
 
     unsigned stepSize;
-    stepSize = (bTop - bBottom) * 5;
+    if((bTop - bBottom) > 123000 or (bTop - bBottom) < 3000){
+        stepSize = (bTop - bBottom) * 6;
+    }else{
+        stepSize = (bTop - bBottom) * 5;
+    }
+    // stepSize = (bTop - bBottom) < 123000 ? ((bTop - bBottom) * 5): ((bTop - bBottom) * 6);
     NumericalOptimizer no(ef);
     no.setX(result);                              // set initial solution
     no.setStepSizeBound(stepSize); // user-specified parameter
